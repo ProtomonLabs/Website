@@ -1,0 +1,93 @@
+---
+title: "Getting Started with Variant Annotation Pipelines"
+description: "A practical guide to setting up a comprehensive variant annotation pipeline using open-source tools like VEP, ANNOVAR, and SnpEff."
+pubDate: 2026-06-15
+tags: ["tutorial", "annotation", "pipelines"]
+---
+
+Variant annotation is a critical step in any genomic analysis pipeline. It bridges the gap between raw variant calls and biological interpretation by adding context — what gene is affected, what is the predicted functional impact, and how common is this variant in the population?
+
+## Why Annotate Variants?
+
+Raw VCF files tell you where a variant is and what the alleles are, but they don't tell you:
+
+- Which gene (if any) is affected
+- Whether the variant is synonymous, missense, or loss-of-function
+- The population allele frequency
+- Conservation scores indicating evolutionary constraint
+- Regulatory annotations (enhancers, promoters, etc.)
+
+## Recommended Tool Stack
+
+Here's a practical pipeline using widely used open-source tools:
+
+### 1. Variant Effect Predictor (VEP)
+
+```bash
+vep \
+  --input_file input.vcf \
+  --output_file annotated.vcf \
+  --cache \
+  --offline \
+  --everything \
+  --assembly GRCh38 \
+  --plugin CADD \
+  --plugin LoFtool
+```
+
+VEP is our primary annotation engine. The `--everything` flag enables all core annotations. Add plugins like CADD for deleteriousness scores and LoFtool for loss-of-function predictions.
+
+### 2. Population Frequency Annotation
+
+Cross-reference variants with gnomAD to get population allele frequencies:
+
+```bash
+vep \
+  --input_file input.vcf \
+  --output_file gnomad_annotated.vcf \
+  --custom gnomad.genomes.v3.1.2.sites.bcf,gnomAD,vcf,exact,0,AF,AF_afr,AF_amr,AF_eas,AF_nfe
+```
+
+Always check frequencies across multiple populations — a variant that is rare globally may be common in a specific ancestry group.
+
+### 3. Regulatory Annotation
+
+Use the Ensembl Regulatory Build to annotate variants in regulatory features:
+
+```bash
+vep \
+  --input_file input.vcf \
+  --output_file regulatory_annotated.vcf \
+  --regulatory
+```
+
+## Building the Pipeline
+
+Here's a compact workflow:
+
+```python
+# pseudocode for pipeline orchestration
+variants = load_vcf("input.vcf")
+vep_annotated = run_vep(variants)
+cadd_scores = annotate_cadd(vep_annotated)
+gnomad_freqs = annotate_gnomad(cadd_scores)
+regulatory = annotate_regulatory(gnomad_freqs)
+
+# Filter to high-impact, rare, regulatory variants
+candidates = regulatory.filter(
+    impact="HIGH" or "MODERATE",
+    af_gnomad < 0.01,
+    in_regulatory_feature=True
+)
+```
+
+## Key Considerations
+
+- **Use the same build throughout**: Mixing GRCh37 and GRCh38 annotations will cause errors.
+- **Cache locally**: Running VEP with `--offline --cache` is significantly faster than API calls.
+- **Prioritize by impact**: Not all annotated variants need equal attention. Focus on HIGH/MODERATE impact variants first.
+- **Document versions**: Always record which annotation database versions you used for reproducibility.
+
+## Next Steps
+
+Once you have your annotated variants, the next step is filtering and prioritization. In a future post, we'll cover strategies for narrowing down thousands of candidates to the most promising variants for validation.

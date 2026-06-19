@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = [
+  {
+    title: "Non-coding Variant Impact Prediction",
+    description: "Building interpretable deep learning models that integrate multi-omics data (ATAC-seq, ChIP-seq, Hi-C) and evolutionary conservation across 100+ vertebrate species to predict the regulatory impact of any non-coding variant in any human tissue.",
+    tags: ["deep learning", "regulatory genomics", "non-coding"],
+    status: "active" as const,
+  },
+  {
+    title: "Global Rare Variant Burden Analysis",
+    description: "Characterizing rare variant burden across 100+ global populations from whole-genome sequencing data to identify novel gene-level and pathway-level associations with complex disease risk.",
+    tags: ["rare variants", "GWAS", "population genetics"],
+    status: "active" as const,
+  },
+  {
+    title: "eQTL Fine-mapping in Admixed Cohorts",
+    description: "Novel statistical frameworks that leverage local ancestry deconvolution to improve power and fine-mapping resolution for expression QTL discovery in ancestrally diverse populations.",
+    tags: ["eQTL", "statistical methods", "ancestry"],
+    status: "active" as const,
+  },
+  {
+    title: "Enhancer-Gene Regulatory Mapping",
+    description: "Integrating chromatin conformation capture (Hi-C, Capture-C), epigenomic marks, and single-cell expression data to systematically map enhancer-gene relationships across human tissues.",
+    tags: ["enhancers", "chromatin", "regulatory genomics"],
+    status: "active" as const,
+  },
+  {
+    title: "Cross-ancestry Polygenic Risk Scores",
+    description: "Developing and benchmarking polygenic risk score methods that account for differential LD patterns, allele frequencies, and genetic architectures across ancestries to improve portability.",
+    tags: ["PRS", "cross-ancestry", "method development"],
+    status: "completed" as const,
+  },
+  {
+    title: "Variant Annotation Standards",
+    description: "Comprehensive benchmarking of variant annotation tools and databases for both coding and non-coding variants, producing community recommendations for clinical interpretation pipelines.",
+    tags: ["annotation", "benchmarking", "clinical genomics"],
+    status: "completed" as const,
+  },
+  {
+    title: "Selection Scans in African Populations",
+    description: "Identifying signatures of natural selection across diverse African populations using whole-genome sequence data, with focus on immune-related genes and local environmental adaptation.",
+    tags: ["selection", "African populations", "population genomics"],
+    status: "completed" as const,
+  },
+];
+---
+
+<BaseLayout title="Projects">
+  <Fragment slot="header">
+    <Header />
+  </Fragment>
+
+  <section class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-ocean-50/80 via-surface-lighter to-white">
+    <div class="absolute inset-0 bg-dots-lg" />
+    <div class="absolute bottom-0 right-0 w-48 h-48 opacity-[0.025] pointer-events-none select-none">
+      <img src="/logo.svg" alt="" class="w-full h-full" aria-hidden="true" />
+    </div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="max-w-3xl">
+        <span class="section-label">Research</span>
+        <h1 class="text-5xl md:text-6xl font-heading font-bold text-ocean-900 leading-tight mb-6">
+          Our<br />
+          <span class="gradient-text">projects</span>
+        </h1>
+        <p class="text-lg text-ocean-600/80 leading-relaxed max-w-xl">
+          Current and completed research projects advancing the understanding of genetic variation through computational approaches.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="mb-10 flex flex-wrap items-center gap-3">
+        <span class="text-sm font-medium text-ocean-500 uppercase tracking-[0.1em]">Filter</span>
+        <div class="h-4 w-px bg-ocean-200/60" />
+        <a href="/projects" class="px-4 py-1.5 bg-cobalt-600 text-white text-sm rounded-full font-medium transition-colors">All</a>
+        <a href="/projects?status=active" class="px-4 py-1.5 bg-white text-ocean-600 text-sm rounded-full border border-ocean-200/60 hover:bg-cobalt-50/50 hover:border-cobalt-200/50 transition-colors font-medium">Active</a>
+        <a href="/projects?status=completed" class="px-4 py-1.5 bg-white text-ocean-600 text-sm rounded-full border border-ocean-200/60 hover:bg-cobalt-50/50 hover:border-cobalt-200/50 transition-colors font-medium">Completed</a>
+      </div>
+      <ProjectCard projects={projects} />
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>

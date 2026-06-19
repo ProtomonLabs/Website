@@ -1,0 +1,62 @@
+---
+const areas = [
+  {
+    title: "Statistical Genomics",
+    description: "Developing and applying rigorous statistical methods to identify genetic variants associated with complex traits — from GWAS design and polygenic risk scores to fine-mapping and Mendelian randomization.",
+  },
+  {
+    title: "Population Genomics",
+    description: "Characterizing patterns of genetic variation across global populations to understand evolutionary history, demographic processes, and ancestry-specific variant frequencies.",
+  },
+  {
+    title: "Non-coding Interpretation",
+    description: "Deciphering the functional impact of variants in non-coding regions by integrating evolutionary constraint, epigenetic annotations, and multi-omics molecular phenotypes.",
+  },
+];
+---
+
+<section class="py-28 md:py-36">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-xl mb-16">
+      <span class="section-label">Expertise</span>
+      <h2 class="text-4xl md:text-5xl font-heading font-bold text-ocean-900 leading-tight">
+        Where we<br class="hidden md:block" />
+        <span class="gradient-text">excel</span>
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card p-8 group animate-in animate-in-delay-1">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cobalt-50 to-ocean-50 flex items-center justify-center text-cobalt-600 mb-5 group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18" />
+            <path d="M7 16l4-8 4 4 4-6" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-heading font-semibold text-ocean-900 mb-3">{areas[0].title}</h3>
+        <p class="text-ocean-600/80 text-sm leading-relaxed">{areas[0].description}</p>
+      </div>
+      <div class="card p-8 group animate-in animate-in-delay-2">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cobalt-50 to-ocean-50 flex items-center justify-center text-cobalt-600 mb-5 group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M2 12h20" />
+            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-heading font-semibold text-ocean-900 mb-3">{areas[1].title}</h3>
+        <p class="text-ocean-600/80 text-sm leading-relaxed">{areas[1].description}</p>
+      </div>
+      <div class="card p-8 group animate-in animate-in-delay-3">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cobalt-50 to-ocean-50 flex items-center justify-center text-cobalt-600 mb-5 group-hover:scale-110 transition-transform duration-300">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-heading font-semibold text-ocean-900 mb-3">{areas[2].title}</h3>
+        <p class="text-ocean-600/80 text-sm leading-relaxed">{areas[2].description}</p>
+      </div>
+    </div>
+  </div>
+</section>

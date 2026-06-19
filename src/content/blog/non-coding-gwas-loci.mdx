@@ -1,0 +1,100 @@
+---
+title: "Understanding Non-coding GWAS Loci"
+description: "Thoughts on recent advances in fine-mapping and functional characterization of non-coding GWAS signals, and practical approaches for interpretation."
+pubDate: 2026-06-10
+tags: ["GWAS", "non-coding", "fine-mapping"]
+---
+
+The vast majority of GWAS loci — over 90% — lie in non-coding regions of the genome. While this has been known for years, the field is still grappling with how to systematically interpret these signals.
+
+## The Challenge
+
+Non-coding GWAS variants pose a unique problem:
+
+1. **They don't change protein sequence**, so we can't easily predict impact
+2. **They may affect any regulatory element** — promoters, enhancers, silencers, insulators
+3. **Their effects are often tissue-specific** — a variant may be functional in heart tissue but irrelevant in blood
+4. **The causal variant is rarely the lead SNP** — linkage disequilibrium makes fine-mapping essential
+
+## Fine-mapping Approaches
+
+The first step is identifying the likely causal variant(s) at a locus:
+
+### Statistical Fine-mapping
+
+Methods like FINEMAP, SuSiE, and CAVIAR use the summary statistics and LD structure to compute posterior inclusion probabilities (PIPs) for each variant:
+
+```
+Variant   |  PIP  |  Annotation            |  CADD
+rs123456  | 0.82  |  Enhancer (heart)      |  15.3
+rs234567  | 0.45  |  Intergenic             |  2.1
+rs345678  | 0.12  |  Intronic (TTN)         |  7.8
+```
+
+A PIP > 0.8 suggests strong evidence for causality, but many loci won't have a single clear causal variant.
+
+### Functional Fine-mapping
+
+Integrate additional data layers:
+
+- **ATAC-seq** for open chromatin regions
+- **ChIP-seq** for transcription factor binding sites
+- **Hi-C / Promoter Capture Hi-C** for enhancer-promoter interactions
+- **MPRA (Massively Parallel Reporter Assays)** for direct functional testing
+
+## A Practical Interpretation Pipeline
+
+Here's an approach we use in the lab:
+
+```python
+def interpret_noncoding_locus(lead_variant, credible_set, tissue):
+    results = {}
+    
+    # 1. Annotate with regulatory features
+    results['regulatory_overlap'] = annotate_regulatory(
+        credible_set, 
+        tissues=[tissue]
+    )
+    
+    # 2. Check chromatin interactions
+    results['target_genes'] = find_enhancer_gene_links(
+        credible_set,
+        hic_data=tissue_hic
+    )
+    
+    # 3. Score for functional impact
+    results['functional_scores'] = {
+        v: compute_composite_score(v, 
+            cadd=True, phastcons=True, 
+            gcms=True, funseq2=True
+        ) 
+        for v in credible_set
+    }
+    
+    # 4. Prioritize variants
+    results['prioritized'] = prioritize(
+        results['regulatory_overlap'],
+        results['target_genes'],
+        results['functional_scores']
+    )
+    
+    return results
+```
+
+## Emerging Approaches
+
+Several exciting developments are changing how we approach non-coding variant interpretation:
+
+- **Deep learning models** (Enformer, Sei) that predict regulatory effects directly from sequence
+- **Multitissue fine-mapping** that leverages shared causal signals across tissues
+- **CRISPR screens** that directly test enhancer function at scale
+- **Variant-to-function (V2F)** frameworks that combine statistical and functional evidence
+
+## Key Takeaways
+
+1. Don't stop at the lead SNP — fine-map rigorously
+2. Consider tissue-specific regulatory data
+3. Use multiple lines of evidence (statistical + functional + evolutionary)
+4. The best candidate often affects a transcription factor binding site in a cell-type-specific enhancer
+
+The non-coding genome is no longer "dark matter." We're building the tools to explore it systematically.
