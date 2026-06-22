@@ -55,7 +55,7 @@ const projects = [
     <Header />
   </Fragment>
 
-  <section class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-ocean-50/80 via-surface-lighter to-white">
+  <section class="relative pt-32 pb-20 overflow-hidden" style="background: linear-gradient(180deg, #f0f9ff, #ffffff);">
     <div class="absolute inset-0 bg-dots-lg" />
     <div class="absolute bottom-0 right-0 w-48 h-48 opacity-[0.025] pointer-events-none select-none">
       <img src="/logo.svg" alt="" class="w-full h-full" aria-hidden="true" />
@@ -63,25 +63,26 @@ const projects = [
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
       <div class="max-w-3xl">
         <span class="section-label">Research</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold text-ocean-900 leading-tight mb-6">
+        <h1 class="text-5xl md:text-6xl font-heading font-bold text-slate-900 leading-tight mb-6">
           Our<br />
           <span class="gradient-text">projects</span>
         </h1>
-        <p class="text-lg text-ocean-600/80 leading-relaxed max-w-xl">
+        <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
           Current and completed research projects advancing the understanding of genetic variation through computational approaches.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-20 bg-surface">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+  <section class="relative py-16 md:py-20 overflow-hidden" style="background: #f1f5f9;">
+    <div class="absolute inset-0 bg-dots" />
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
       <div class="mb-10 flex flex-wrap items-center gap-3">
-        <span class="text-sm font-medium text-ocean-500 uppercase tracking-[0.1em]">Filter</span>
-        <div class="h-4 w-px bg-ocean-200/60" />
-        <a href="/projects" class="px-4 py-1.5 bg-cobalt-600 text-white text-sm rounded-full font-medium transition-colors">All</a>
-        <a href="/projects?status=active" class="px-4 py-1.5 bg-white text-ocean-600 text-sm rounded-full border border-ocean-200/60 hover:bg-cobalt-50/50 hover:border-cobalt-200/50 transition-colors font-medium">Active</a>
-        <a href="/projects?status=completed" class="px-4 py-1.5 bg-white text-ocean-600 text-sm rounded-full border border-ocean-200/60 hover:bg-cobalt-50/50 hover:border-cobalt-200/50 transition-colors font-medium">Completed</a>
+        <span class="text-sm font-semibold text-slate-500 uppercase tracking-[0.1em]">Filter</span>
+        <div class="h-4 w-px bg-slate-200/60" />
+        <a href="/projects" class="px-4 py-1.5 text-white text-sm font-semibold rounded-full transition-colors" style="background: linear-gradient(135deg, #4f46e5, #6366f1);">All</a>
+        <a href="/projects?status=active" class="px-4 py-1.5 text-slate-700 text-sm font-semibold rounded-full border transition-colors" style="background: rgba(255,255,255,0.6); backdrop-filter: blur(8px); border-color: rgba(186,230,253,0.5);">Active</a>
+        <a href="/projects?status=completed" class="px-4 py-1.5 text-slate-700 text-sm font-semibold rounded-full border transition-colors" style="background: rgba(255,255,255,0.6); backdrop-filter: blur(8px); border-color: rgba(186,230,253,0.5);">Completed</a>
       </div>
       <ProjectCard projects={projects} />
     </div>
