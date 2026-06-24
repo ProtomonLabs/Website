@@ -8,217 +8,86 @@ import BlogCard from "../components/BlogCard.astro";
 ---
 
 <BaseLayout title="Home">
-  <Fragment slot="header">
-    <Header />
-  </Fragment>
+  <Fragment slot="header"><Header /></Fragment>
 
-  <!-- ===== HERO ===== -->
-  <section class="relative min-h-screen flex items-center overflow-hidden pt-20" style="background: linear-gradient(135deg, #f0f9ff, #ffffff, #eef2ff);">
-    <div class="absolute inset-0 bg-grid" />
-    <div class="absolute top-20 right-10 w-96 h-96 bg-cobalt-400/10 rounded-full blur-3xl animate-glow" />
-    <div class="absolute bottom-20 left-10 w-80 h-80 bg-ocean-300/10 rounded-full blur-3xl animate-glow" style="animation-delay: 1.5s" />
-    <div class="absolute top-1/3 left-1/4 w-px h-40 bg-cobalt-300/20" />
-    <div class="absolute bottom-1/3 right-1/4 w-px h-60 bg-cobalt-300/20" />
-    <div class="absolute right-0 bottom-0 w-64 h-64 md:w-96 md:h-96 opacity-[0.035] pointer-events-none select-none animate-float">
-      <img src="/logo.svg" alt="" class="w-full h-full" aria-hidden="true" />
-    </div>
-    <div class="absolute left-8 top-1/3 w-32 h-32 opacity-[0.02] pointer-events-none select-none hidden md:block">
-      <img src="/logo.svg" alt="" class="w-full h-full" aria-hidden="true" />
-    </div>
-    <div class="absolute top-1/2 right-16 w-16 h-px bg-gradient-to-r from-cobalt-300/0 via-cobalt-300/40 to-cobalt-300/0 hidden lg:block" />
-    <div class="absolute bottom-1/4 left-16 w-12 h-px bg-gradient-to-r from-ocean-300/0 via-ocean-300/30 to-ocean-300/0 hidden lg:block" />
-
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10 py-20 w-full">
-      <div class="max-w-4xl">
-        <div class="flex items-center gap-2 mb-6 animate-in">
-          <span class="w-2 h-2 rounded-full bg-cobalt-500 animate-pulse" />
-          <span class="text-xs font-semibold uppercase tracking-[0.25em] text-cobalt-600">
-            Computational Genomics Lab
-          </span>
-        </div>
-        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-slate-900 leading-[0.90] tracking-tight mb-8 animate-in animate-in-delay-1">
-          Decoding the
-          <br />
-          <span class="gradient-text-warm">genome</span>
-          <br />
-          one variant
-          <br />
-          at a time
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden" style="background: linear-gradient(135deg, #fafaf9, #ffffff, #eef2ff);">
+    <div class="absolute inset-0 bg-subtle-grid" />
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 w-full">
+      <div class="max-w-3xl">
+        <span class="section-label animate-up">Genomics Infrastructure Lab</span>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-stone-900 leading-[0.90] tracking-tight mb-8 animate-up animate-up-d1">
+          Infrastructure<br />
+          <span class="gradient-text-warm">for the</span><br />
+          genome
         </h1>
-        <p class="text-lg md:text-xl text-slate-600 max-w-xl leading-relaxed mb-10 animate-in animate-in-delay-2">
-          Protomon Labs advances the understanding of genetic variation through statistical genomics, population genomics, and non-coding variant interpretation — bridging the gap between raw sequence and biological insight.
+        <p class="text-lg md:text-xl text-stone-600 max-w-xl leading-relaxed mb-8 animate-up animate-up-d2">
+          Protomon Labs builds the platforms, standards, and tools that underpin genomic discovery at scale — from variant annotation infrastructure to population-scale data resources.
         </p>
-        <div class="flex flex-wrap gap-4 animate-in animate-in-delay-3">
-          <a href="/projects" class="btn-primary text-base px-8 py-4">
-            Explore Our Work
-            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-          <a href="/about" class="btn-secondary text-base px-8 py-4">
-            About the Lab
-          </a>
+        <div class="flex flex-wrap gap-4 animate-up animate-up-d3">
+          <a href="/projects" class="btn-primary text-base px-8 py-3">Explore our work <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a>
+          <a href="/about" class="btn-secondary text-base px-8 py-3">About the lab</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== RESEARCH FOCUS ===== -->
   <ResearchFocus />
 
-  <!-- ===== PROJECTS ===== -->
-  <section class="relative py-28 md:py-36 overflow-hidden" style="background: #f1f5f9;">
-    <div class="absolute inset-0 bg-dots" />
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="flex items-end justify-between mb-14">
+  <section class="py-24 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="flex items-end justify-between mb-12">
         <div>
-          <span class="section-label">Featured Work</span>
-          <h2 class="text-4xl md:text-5xl font-heading font-bold text-slate-900 leading-tight">
-            Current<br class="hidden md:block" />
-            <span class="gradient-text">projects</span>
-          </h2>
+          <span class="section-label">Platforms</span>
+          <h2 class="text-4xl font-heading font-bold text-stone-900 leading-tight">Current <span class="gradient-text">projects</span></h2>
         </div>
-        <a href="/projects" class="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-cobalt-600 hover:text-cobalt-800 transition-colors group">
-          View all
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
+        <a href="/projects" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-cobalt-600 hover:text-cobalt-800 transition-colors">View all <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a>
       </div>
-      <ProjectCard
-        projects={[
-          {
-            title: "Non-coding Variant Impact Prediction",
-            description: "Building interpretable deep learning models that integrate multi-omics data and evolutionary conservation to predict the regulatory impact of any non-coding variant in any human tissue.",
-            tags: ["deep learning", "regulatory genomics", "non-coding"],
-            status: "active",
-          },
-          {
-            title: "Global Rare Variant Burden Analysis",
-            description: "Characterizing rare variant burden across 100+ global populations using whole-genome sequencing to identify novel gene-level associations with complex disease risk.",
-            tags: ["rare variants", "GWAS", "population genetics"],
-            status: "active",
-          },
-          {
-            title: "eQTL Fine-mapping in Admixed Cohorts",
-            description: "Novel statistical frameworks that leverage local ancestry deconvolution to improve power and fine-mapping resolution for expression QTL discovery in diverse populations.",
-            tags: ["eQTL", "statistical methods", "ancestry"],
-            status: "in-review",
-          },
-        ]}
-      />
-      <div class="mt-8 text-center md:hidden">
-        <a href="/projects" class="inline-flex items-center gap-2 text-sm font-semibold text-cobalt-600 hover:text-cobalt-800 transition-colors">
-          View all projects
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
+      <ProjectCard projects={[
+        { title: "Variant Annotation Infrastructure", description: "A unified platform integrating multi-omics data, evolutionary conservation, and regulatory annotations into a scalable pipeline for variant impact prediction across the genome.", tags: ["annotation platform", "regulatory genomics", "deep learning"], status: "active" },
+        { title: "Global Rare Variant Atlas", description: "An open infrastructure for characterizing rare variant burden across 100+ populations, providing standardized gene-level association resources and queryable population frequency data.", tags: ["rare variants", "GWAS", "population infrastructure"], status: "active" },
+        { title: "Cross-population eQTL Framework", description: "Portable statistical infrastructure for expression QTL mapping in admixed and diverse populations, designed for reproducibility and cross-study harmonization.", tags: ["eQTL", "statistical framework", "reproducibility"], status: "in-review" },
+      ]} />
+      <div class="mt-6 text-center md:hidden"><a href="/projects" class="inline-flex items-center gap-1 text-sm font-medium text-cobalt-600 hover:text-cobalt-800 transition-colors">View all projects <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a></div>
     </div>
   </section>
 
-  <!-- ===== STATS ===== -->
-  <section class="py-24 bg-white border-y border-slate-200/50">
+  <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        {[
-          { number: "7+", label: "Active Projects" },
-          { number: "15+", label: "Peer-reviewed Publications" },
-          { number: "5+", label: "Active Collaborations" },
-          { number: "200K+", label: "Variants Analyzed" },
-        ].map((stat, i) => (
-          <div class="animate-in" style={`animation-delay: ${i * 0.1}s`}>
-            <div class="text-4xl md:text-5xl font-heading font-bold gradient-text mb-2 leading-none">
-              {stat.number}
-            </div>
-            <div class="text-[11px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
-              {stat.label}
-            </div>
+        {[{ n: "7+", l: "Platforms in Development" }, { n: "15+", l: "Open-source Tools" }, { n: "5+", l: "Active Collaborations" }, { n: "200K+", l: "Variants Catalogued" }].map((s, i) => (
+          <div class={`animate-up${i > 0 ? ` animate-up-d${i}` : ""}`}>
+            <div class="text-4xl md:text-5xl font-heading font-bold gradient-text mb-2 leading-none">{s.n}</div>
+            <div class="text-[11px] uppercase tracking-[0.18em] text-stone-500 font-semibold">{s.l}</div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ===== BLOG ===== -->
-  <section class="relative py-28 md:py-36 overflow-hidden bg-surface">
-    <div class="absolute inset-0 bg-dots" />
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-xl mb-16">
+  <section class="py-24 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="max-w-xl mb-12">
         <span class="section-label">Journal</span>
-        <h2 class="text-4xl md:text-5xl font-heading font-bold text-slate-900 leading-tight">
-          Latest<br class="hidden md:block" />
-          <span class="gradient-text">writing</span>
-        </h2>
+        <h2 class="text-4xl font-heading font-bold text-stone-900 leading-tight">Latest <span class="gradient-text">writing</span></h2>
       </div>
-      <BlogCard
-        posts={[
-          {
-            title: "Building a Variant Annotation Pipeline from Scratch",
-            description: "A practical walkthrough of setting up a production-grade variant annotation pipeline using VEP, CADD, gnomAD, and regulatory annotations.",
-            pubDate: new Date("2026-06-15"),
-            tags: ["tutorial", "pipeline", "annotation"],
-            slug: "variant-annotation-pipelines",
-          },
-          {
-            title: "Fine-mapping Non-coding GWAS Loci",
-            description: "Recent advances in statistical and functional fine-mapping of non-coding GWAS signals, and practical strategies for prioritizing causal variants.",
-            pubDate: new Date("2026-06-10"),
-            tags: ["GWAS", "fine-mapping", "non-coding"],
-            slug: "non-coding-gwas-loci",
-          },
-        ]}
-      />
-      <div class="mt-10 text-center">
-        <a href="/blog" class="btn-primary">
-          Read the Journal
-          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
+      <BlogCard posts={[
+        { title: "Building a Variant Annotation Infrastructure", description: "A practical guide to designing scalable, reproducible variant annotation infrastructure for production-grade genomic analysis across diverse populations.", pubDate: new Date("2026-06-15"), tags: ["tutorial", "infrastructure", "annotation"], slug: "variant-annotation-pipelines" },
+        { title: "Infrastructure Approaches to Non-coding GWAS", description: "How platform thinking — integrated data layers, standardized pipelines, and open resources — is transforming fine-mapping of non-coding GWAS signals.", pubDate: new Date("2026-06-10"), tags: ["GWAS", "infrastructure", "non-coding"], slug: "non-coding-gwas-loci" },
+      ]} />
+      <div class="mt-8 text-center"><a href="/blog" class="btn-primary">Read the journal <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a></div>
     </div>
   </section>
 
-  <!-- ===== CTA ===== -->
-  <section class="relative py-32 overflow-hidden" style="background: linear-gradient(135deg, #312e81, #0c4a6e, #3730a3);">
-    <div class="absolute inset-0 bg-grid opacity-[0.04]" />
-    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-cobalt-500/10 to-transparent" />
-    <div class="absolute top-1/2 right-16 transform -translate-y-1/2 w-44 h-44 opacity-[0.03] pointer-events-none select-none hidden md:block">
-      <img src="/logo.svg" alt="" class="w-full h-full" aria-hidden="true" />
-    </div>
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10 text-center">
+  <section class="py-24" style="background: linear-gradient(135deg, #312e81, #0c4a6e);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 text-center">
       <div class="max-w-2xl mx-auto">
-        <div class="animate-in">
-          <span class="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400 mb-5">
-            <span class="w-6 h-px bg-slate-400/30" />
-            Collaborate
-            <span class="w-6 h-px bg-slate-400/30" />
-          </span>
-        </div>
-        <h2 class="text-4xl md:text-5xl font-heading font-bold text-white leading-tight mb-5 animate-in animate-in-delay-1">
-          Let's decode biology<br />together
-        </h2>
-        <p class="text-slate-300 text-lg max-w-lg mx-auto mb-10 leading-relaxed animate-in animate-in-delay-2">
-          Whether you're a fellow researcher, a student exploring genomics, or part of a collaborative initiative — reach out. We'd love to hear from you.
-        </p>
-        <div class="animate-in animate-in-delay-3">
-          <a
-            href="/contact"
-            class="inline-flex items-center px-8 py-4 bg-white hover:bg-slate-50 text-cobalt-700 font-semibold rounded-xl transition-all duration-300 shadow-lg active:scale-[0.97]"
-          >
-            Get in Touch
-            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </a>
-        </div>
+        <span class="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-stone-400 mb-5"><span class="w-6 h-px bg-stone-400/30" /> Collaborate <span class="w-6 h-px bg-stone-400/30" /></span>
+        <h2 class="text-4xl md:text-5xl font-heading font-bold text-white leading-tight mb-5">Building the foundations<br />of genomic discovery</h2>
+        <p class="text-stone-300 text-lg max-w-lg mx-auto mb-8 leading-relaxed">We partner with sequencing centers, biobanks, disease consortia, and tool developers. If you're building at genomic scale, we should talk.</p>
+        <a href="/contact" class="inline-flex items-center px-8 py-3.5 bg-white hover:bg-stone-50 text-cobalt-700 font-semibold rounded-xl transition-all duration-300 shadow-md active:scale-[0.97]">Get in touch <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></a>
       </div>
     </div>
   </section>
 
-  <Fragment slot="footer">
-    <Footer />
-  </Fragment>
+  <Fragment slot="footer"><Footer /></Fragment>
 </BaseLayout>

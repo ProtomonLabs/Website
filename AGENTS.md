@@ -62,8 +62,8 @@ The boxy robot logo (`public/logo.svg`) is a minimal geometric SVG of a tiny rob
 
 ### Content
 
-- Landing page hero: "Decoding the genome, one variant at a time"
-- About: Researcher bio focused on non-coding variant interpretation
-- Projects: Grid of active/completed research projects
-- Blog: MDX posts (annotation pipeline tutorial, non-coding GWAS fine-mapping)
+- Landing page hero: "Infrastructure for the genome"
+- About: Lab bio focused on building genomic infrastructure
+- Projects: Grid of active/completed infrastructure projects
+- Blog: MDX posts (annotation infrastructure, non-coding GWAS infrastructure)
 - Contact: Form + contact info

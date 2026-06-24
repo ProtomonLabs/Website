@@ -1,93 +1,97 @@
 ---
-title: "Getting Started with Variant Annotation Pipelines"
-description: "A practical guide to setting up a comprehensive variant annotation pipeline using open-source tools like VEP, ANNOVAR, and SnpEff."
+title: "Building a Variant Annotation Infrastructure"
+description: "A practical guide to designing scalable, reproducible variant annotation infrastructure that supports production-grade genomic analysis across diverse populations."
 pubDate: 2026-06-15
-tags: ["tutorial", "annotation", "pipelines"]
+tags: ["tutorial", "infrastructure", "annotation"]
 ---
 
-Variant annotation is a critical step in any genomic analysis pipeline. It bridges the gap between raw variant calls and biological interpretation by adding context — what gene is affected, what is the predicted functional impact, and how common is this variant in the population?
+Variant annotation is a critical layer in any genomic analysis pipeline. It bridges the gap between raw variant calls and biological interpretation — but doing it at scale requires infrastructure, not just a script.
 
-## Why Annotate Variants?
+## Why Infrastructure Matters
 
-Raw VCF files tell you where a variant is and what the alleles are, but they don't tell you:
+A single VCF file is manageable. A thousand are not. When you're processing population-scale sequencing data, annotation becomes an infrastructure problem:
 
-- Which gene (if any) is affected
-- Whether the variant is synonymous, missense, or loss-of-function
-- The population allele frequency
-- Conservation scores indicating evolutionary constraint
-- Regulatory annotations (enhancers, promoters, etc.)
+- **Throughput**: Can your pipeline handle 10,000 genomes in a week?
+- **Consistency**: Are annotations reproducible across batches and tool versions?
+- **Extensibility**: How do you add a new annotation source without rebuilding everything?
+- **Portability**: Does your pipeline run on local clusters, cloud, and HPC?
 
-## Recommended Tool Stack
+## Infrastructure Stack
 
-Here's a practical pipeline using widely used open-source tools:
+Here's the approach we use for production-grade annotation:
 
-### 1. Variant Effect Predictor (VEP)
-
-```bash
-vep \
-  --input_file input.vcf \
-  --output_file annotated.vcf \
-  --cache \
-  --offline \
-  --everything \
-  --assembly GRCh38 \
-  --plugin CADD \
-  --plugin LoFtool
-```
-
-VEP is our primary annotation engine. The `--everything` flag enables all core annotations. Add plugins like CADD for deleteriousness scores and LoFtool for loss-of-function predictions.
-
-### 2. Population Frequency Annotation
-
-Cross-reference variants with gnomAD to get population allele frequencies:
+### 1. Workflow Management
 
 ```bash
-vep \
-  --input_file input.vcf \
-  --output_file gnomad_annotated.vcf \
-  --custom gnomad.genomes.v3.1.2.sites.bcf,gnomAD,vcf,exact,0,AF,AF_afr,AF_amr,AF_eas,AF_nfe
+# Nextflow pipeline for scalable annotation
+nextflow run protomon/annotate \\
+  --input s3://project/callsets/ \\
+  --output s3://project/annotated/ \\
+  --reference GRCh38 \\
+  --cache /vep-cache \\
+  -profile docker \\
+  -with-report annotation-report.html
 ```
 
-Always check frequencies across multiple populations — a variant that is rare globally may be common in a specific ancestry group.
+Use workflow managers (Nextflow, WDL/Cromwell) that handle task scheduling, retry logic, and resource management. Don't orchestrate annotation with shell scripts.
 
-### 3. Regulatory Annotation
+### 2. Layered Annotation Architecture
 
-Use the Ensembl Regulatory Build to annotate variants in regulatory features:
-
-```bash
-vep \
-  --input_file input.vcf \
-  --output_file regulatory_annotated.vcf \
-  --regulatory
+```
+Raw VCF
+  └─ Layer 1: Core annotation (VEP)
+       └─ Layer 2: Conservation (phyloP, phastCons, CADD)
+            └─ Layer 3: Frequencies (gnomAD, TopMed, local)
+                 └─ Layer 4: Regulatory (Ensembl Regulatory, Roadmap)
+                      └─ Layer 5: Tissue-specific (GTEx, ENCODE)
+                           └─ Layer 6: Custom (project-specific)
 ```
 
-## Building the Pipeline
+Each layer is independent and cacheable. Add or remove layers without disrupting the pipeline.
 
-Here's a compact workflow:
+### 3. Annotation Database Management
 
 ```python
-# pseudocode for pipeline orchestration
-variants = load_vcf("input.vcf")
-vep_annotated = run_vep(variants)
-cadd_scores = annotate_cadd(vep_annotated)
-gnomad_freqs = annotate_gnomad(cadd_scores)
-regulatory = annotate_regulatory(gnomad_freqs)
+# pseudocode for annotation database versioning
+annotation_store = AnnotationStore("s3://annotations/")
+annotation_store.register("vep", version="114", build="GRCh38")
+annotation_store.register("cadd", version="1.7", build="GRCh38")
+annotation_store.register("gnomad", version="4.1", build="GRCh38")
 
-# Filter to high-impact, rare, regulatory variants
-candidates = regulatory.filter(
-    impact="HIGH" or "MODERATE",
-    af_gnomad < 0.01,
-    in_regulatory_feature=True
-)
+# Reproduce any past analysis
+pipeline = annotation_store.reproduce(timestamp="2026-06-01")
 ```
 
-## Key Considerations
+### 4. Standardized Output Format
 
-- **Use the same build throughout**: Mixing GRCh37 and GRCh38 annotations will cause errors.
-- **Cache locally**: Running VEP with `--offline --cache` is significantly faster than API calls.
-- **Prioritize by impact**: Not all annotated variants need equal attention. Focus on HIGH/MODERATE impact variants first.
-- **Document versions**: Always record which annotation database versions you used for reproducibility.
+Define a schema for annotated variants once, across all pipelines:
 
-## Next Steps
+```json
+{
+  "variant_id": "1-1000000-G-A",
+  "consequence": "missense_variant",
+  "gene": "GENE1",
+  "impact": "MODERATE",
+  "cadd_score": 18.5,
+  "gnomad_af": 0.0023,
+  "regulatory_features": ["enhancer_heart"]
+}
+```
 
-Once you have your annotated variants, the next step is filtering and prioritization. In a future post, we'll cover strategies for narrowing down thousands of candidates to the most promising variants for validation.
+## Key Decisions
+
+- **Use the same reference build throughout**: GRCh38 or T2T-CHM13, but pick one and standardize
+- **Cache aggressively**: Local VEP caches reduce runtime by 10x
+- **Version everything**: Annotation databases change. Tag every release.
+- **Design for incremental updates**: New samples should annotate in minutes, not days
+
+## Infrastructure as a Product
+
+Treat your annotation pipeline as infrastructure, not a one-off analysis. It needs:
+- Versioned releases
+- Documentation
+- Test suites
+- Performance benchmarks
+- A roadmap
+
+This is what we build at Protomon Labs — annotation infrastructure designed for the scale of modern genomics.

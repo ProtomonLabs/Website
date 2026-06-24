@@ -1,100 +1,96 @@
 ---
-title: "Understanding Non-coding GWAS Loci"
-description: "Thoughts on recent advances in fine-mapping and functional characterization of non-coding GWAS signals, and practical approaches for interpretation."
+title: "Infrastructure Approaches to Non-coding GWAS"
+description: "How platform thinking — integrated data layers, standardized pipelines, and open resources — is transforming fine-mapping of non-coding GWAS signals."
 pubDate: 2026-06-10
-tags: ["GWAS", "non-coding", "fine-mapping"]
+tags: ["GWAS", "infrastructure", "non-coding"]
 ---
 
-The vast majority of GWAS loci — over 90% — lie in non-coding regions of the genome. While this has been known for years, the field is still grappling with how to systematically interpret these signals.
+Over 90% of GWAS loci fall in non-coding regions. Interpreting them requires more than a single tool — it requires infrastructure that layers statistical, functional, and evolutionary data into a coherent analysis framework.
 
-## The Challenge
+## The Infrastructure Challenge
 
-Non-coding GWAS variants pose a unique problem:
+Non-coding GWAS interpretation demands:
 
-1. **They don't change protein sequence**, so we can't easily predict impact
-2. **They may affect any regulatory element** — promoters, enhancers, silencers, insulators
-3. **Their effects are often tissue-specific** — a variant may be functional in heart tissue but irrelevant in blood
-4. **The causal variant is rarely the lead SNP** — linkage disequilibrium makes fine-mapping essential
+1. **Fine-mapping at scale** — statistically prioritizing causal variants across thousands of loci
+2. **Regulatory data integration** — overlaying ATAC-seq, ChIP-seq, and Hi-C data from relevant tissues
+3. **Functional scoring** — computing conservation, regulatory impact, and deleteriousness
+4. **Variant-to-gene linking** — connecting non-coding variants to their target genes
 
-## Fine-mapping Approaches
+No single tool solves all four. The solution is an **infrastructure stack** where each layer is independently maintained and composable.
 
-The first step is identifying the likely causal variant(s) at a locus:
+## Our Infrastructure Stack
 
-### Statistical Fine-mapping
-
-Methods like FINEMAP, SuSiE, and CAVIAR use the summary statistics and LD structure to compute posterior inclusion probabilities (PIPs) for each variant:
-
-```
-Variant   |  PIP  |  Annotation            |  CADD
-rs123456  | 0.82  |  Enhancer (heart)      |  15.3
-rs234567  | 0.45  |  Intergenic             |  2.1
-rs345678  | 0.12  |  Intronic (TTN)         |  7.8
-```
-
-A PIP > 0.8 suggests strong evidence for causality, but many loci won't have a single clear causal variant.
-
-### Functional Fine-mapping
-
-Integrate additional data layers:
-
-- **ATAC-seq** for open chromatin regions
-- **ChIP-seq** for transcription factor binding sites
-- **Hi-C / Promoter Capture Hi-C** for enhancer-promoter interactions
-- **MPRA (Massively Parallel Reporter Assays)** for direct functional testing
-
-## A Practical Interpretation Pipeline
-
-Here's an approach we use in the lab:
+### Layer 1: Statistical Fine-mapping
 
 ```python
-def interpret_noncoding_locus(lead_variant, credible_set, tissue):
-    results = {}
-    
-    # 1. Annotate with regulatory features
-    results['regulatory_overlap'] = annotate_regulatory(
-        credible_set, 
-        tissues=[tissue]
-    )
-    
-    # 2. Check chromatin interactions
-    results['target_genes'] = find_enhancer_gene_links(
-        credible_set,
-        hic_data=tissue_hic
-    )
-    
-    # 3. Score for functional impact
-    results['functional_scores'] = {
-        v: compute_composite_score(v, 
-            cadd=True, phastcons=True, 
-            gcms=True, funseq2=True
-        ) 
-        for v in credible_set
-    }
-    
-    # 4. Prioritize variants
-    results['prioritized'] = prioritize(
-        results['regulatory_overlap'],
-        results['target_genes'],
-        results['functional_scores']
-    )
-    
-    return results
+# Standardized fine-mapping pipeline
+fine_mapping = FineMappingInfrastructure(
+    method="susie",          # SuSiE, FINEMAP, CAVIAR
+    ld_reference="gnomad",   # population-matched LD
+    priors=annotated_variants
+)
+credible_sets = fine_mapping.run(summary_stats, loci)
 ```
 
-## Emerging Approaches
+Containerized, versioned, and reproducible. Swap methods without rebuilding the pipeline.
 
-Several exciting developments are changing how we approach non-coding variant interpretation:
+### Layer 2: Regulatory Data Platform
 
-- **Deep learning models** (Enformer, Sei) that predict regulatory effects directly from sequence
-- **Multitissue fine-mapping** that leverages shared causal signals across tissues
-- **CRISPR screens** that directly test enhancer function at scale
-- **Variant-to-function (V2F)** frameworks that combine statistical and functional evidence
+```
+Tissue-specific regulatory data as a service:
 
-## Key Takeaways
+  API: annotate.protomonlabs.org/v1/regulatory
+  Query: /variants?tissue=heart&datasets=atac,chip,hic
+  
+  Returns: overlapping regulatory elements,
+           chromatin interactions,
+           transcription factor binding sites
+```
 
-1. Don't stop at the lead SNP — fine-map rigorously
-2. Consider tissue-specific regulatory data
-3. Use multiple lines of evidence (statistical + functional + evolutionary)
-4. The best candidate often affects a transcription factor binding site in a cell-type-specific enhancer
+Standardized API access to regulatory data means analysis pipelines stay clean while the underlying data sources evolve.
 
-The non-coding genome is no longer "dark matter." We're building the tools to explore it systematically.
+### Layer 3: Functional Score Integration
+
+```python
+# Composite scoring infrastructure
+scores = ScoreIntegrator(
+    conservation=["phyloP", "phastCons", "CADD"],
+    regulatory=["gcms", "funseq2", "eigen"],
+    tissue_specific=["ABC_score", "EpiMap"]
+)
+results = scores.compute(credible_set)
+```
+
+Each score source is independently versioned and cached. Adding a new score is a configuration change, not a code change.
+
+### Layer 4: Variant-to-Gene Linking
+
+```python
+# Multi-evidence gene linking
+links = GeneLinker(
+    methods=["distance", "eQTL", "Hi-C", "ABC"]
+)
+target_genes = links.link(variants, tissue=heart)
+```
+
+Evidence-weighted gene assignment that's transparent and reproducible.
+
+## Why Infrastructure Matters
+
+Without infrastructure, non-coding GWAS analysis looks like this:
+- Hand-curated scripts for each data source
+- Manual downloads from different portals
+- Ad-hoc versioning
+- Results that can't be reproduced six months later
+
+With infrastructure:
+- One pipeline, any locus
+- Versioned, cached data layers
+- Reproducible by default
+- Results that compound — every analysis improves the next
+
+## Open Infrastructure
+
+All layers of our non-coding GWAS infrastructure are open-source. We believe the tools for interpreting the non-coding genome should be as accessible as the data itself.
+
+This is the infrastructure approach we're building at Protomon Labs — because solving the non-coding genome requires platforms, not just papers.

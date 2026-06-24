@@ -6,89 +6,38 @@ import ContactForm from "../components/ContactForm.tsx";
 ---
 
 <BaseLayout title="Contact">
-  <Fragment slot="header">
-    <Header />
-  </Fragment>
+  <Fragment slot="header"><Header /></Fragment>
 
-  <section class="relative pt-32 pb-20 overflow-hidden" style="background: linear-gradient(180deg, #f0f9ff, #ffffff);">
-    <div class="absolute inset-0 bg-dots-lg" />
-    <div class="absolute bottom-0 right-0 w-40 h-40 opacity-[0.025] pointer-events-none select-none">
-      <img src="/logo.svg" alt="" class="w-full h-full" aria-hidden="true" />
-    </div>
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+  <section class="pt-32 pb-16" style="background: linear-gradient(180deg, #fafaf9, #ffffff);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="max-w-3xl">
         <span class="section-label">Connect</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold text-slate-900 leading-tight mb-6">
-          Get in<br />
-          <span class="gradient-text">touch</span>
-        </h1>
-        <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
-          Interested in collaboration, mentorship, or just want to discuss genomics? We'd love to hear from you.
-        </p>
+        <h1 class="text-5xl md:text-6xl font-heading font-bold text-stone-900 leading-tight mb-6">Get in <span class="text-cobalt-600">touch</span></h1>
+        <p class="text-lg text-stone-600 max-w-xl">Working on a large-scale sequencing project, building analysis tools, or developing population-scale genomics resources? Let's talk.</p>
       </div>
     </div>
   </section>
 
-  <section class="relative py-16 md:py-20 overflow-hidden" style="background: #f1f5f9;">
-    <div class="absolute inset-0 bg-dots" />
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
-        <div class="md:col-span-2">
-          <div class="space-y-5">
-            <div class="card p-6 animate-in animate-in-delay-1">
-              <div class="flex items-start gap-4">
-                <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 text-cobalt-600" style="background: linear-gradient(135deg, rgba(238,242,255,0.8), rgba(224,242,254,0.8));">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-heading font-semibold text-slate-900 text-sm">Email</h3>
-                  <p class="text-slate-500 text-sm">hello@protomonlabs.org</p>
-                </div>
-              </div>
-            </div>
-            <div class="card p-6 animate-in animate-in-delay-2">
-              <div class="flex items-start gap-4">
-                <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 text-cobalt-600" style="background: linear-gradient(135deg, rgba(238,242,255,0.8), rgba(224,242,254,0.8));">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-heading font-semibold text-slate-900 text-sm">Location</h3>
-                  <p class="text-slate-500 text-sm">Computational Genomics Lab<br />Cambridge, UK</p>
-                </div>
-              </div>
-            </div>
-            <div class="card p-6 animate-in animate-in-delay-3">
-              <div class="flex items-start gap-4">
-                <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 text-cobalt-600" style="background: linear-gradient(135deg, rgba(238,242,255,0.8), rgba(224,242,254,0.8));">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-heading font-semibold text-slate-900 text-sm">Availability</h3>
-                  <p class="text-slate-500 text-sm">We aim to respond within 2–3 business days.</p>
-                </div>
-              </div>
-            </div>
-            <div class="card p-6 animate-in animate-in-delay-4">
-              <h3 class="font-heading font-semibold text-slate-900 text-sm mb-3">Connect Online</h3>
-              <div class="flex flex-wrap gap-2">
-                <span class="tag text-[11px]">GitHub</span>
-                <span class="tag text-[11px]">Google Scholar</span>
-                <span class="tag text-[11px]">ORCID</span>
-                <span class="tag text-[11px]">Bluesky</span>
-              </div>
-            </div>
+  <section class="py-16 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
+        <div class="md:col-span-2 space-y-4">
+          <div class="card p-5">
+            <h3 class="font-semibold text-stone-900 text-sm mb-1">Email</h3>
+            <p class="text-stone-500 text-sm">hello@protomonlabs.org</p>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-semibold text-stone-900 text-sm mb-1">Location</h3>
+            <p class="text-stone-500 text-sm">Computational Genomics Lab<br />Cambridge, UK</p>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-semibold text-stone-900 text-sm mb-1">Availability</h3>
+            <p class="text-stone-500 text-sm">We aim to respond within 2–3 business days.</p>
           </div>
         </div>
         <div class="md:col-span-3">
-          <div class="card p-8 animate-in animate-in-delay-2">
-            <h2 class="text-xl font-heading font-bold text-slate-900 mb-6">Send a message</h2>
+          <div class="card p-8">
+            <h2 class="text-xl font-semibold text-stone-900 mb-5">Send a message</h2>
             <ContactForm client:load />
           </div>
         </div>
@@ -96,7 +45,5 @@ import ContactForm from "../components/ContactForm.tsx";
     </div>
   </section>
 
-  <Fragment slot="footer">
-    <Footer />
-  </Fragment>
+  <Fragment slot="footer"><Footer /></Fragment>
 </BaseLayout>

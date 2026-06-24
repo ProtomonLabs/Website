@@ -1,8 +1,8 @@
 # Protomon Labs
 
-Decoding the genome, one variant at a time.
+Infrastructure for the genome. Platforms, standards, and tools for genomic discovery at scale.
 
-A computational genomics research lab website built with **Astro**, **React**, and **Tailwind CSS**.
+A computational genomics infrastructure lab website built with **Astro**, **React**, and **Tailwind CSS**.
 
 ## Design Guidelines
 

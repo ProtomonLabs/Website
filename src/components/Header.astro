@@ -1,78 +1,41 @@
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent border-b border-transparent">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="flex items-center justify-between h-20">
       <a href="/" class="flex items-center gap-3 group">
-        <div class="relative w-9 h-9">
-          <img src="/logo.svg" alt="Protomon Labs" class="w-full h-full group-hover:scale-105 transition-transform duration-300" />
-        </div>
-        <span class="text-lg font-heading font-semibold text-slate-900 tracking-tight transition-colors duration-300 group-hover:text-cobalt-700">
-          Protomon<span class="text-cobalt-500"> Labs</span>
-        </span>
+        <img src="/logo.svg" alt="Protomon Labs" class="w-9 h-9 group-hover:scale-105 transition-transform duration-300" />
+        <span class="text-lg font-heading font-semibold text-stone-900 tracking-tight transition-colors duration-300 group-hover:text-cobalt-700">Protomon<span class="text-cobalt-500"> Labs</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-6">
-        <a href="/" class="text-sm font-semibold text-slate-700 hover:text-cobalt-600 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-cobalt-400 after:rounded-full after:transition-all hover:after:w-full">
-          Home
-        </a>
-        <a href="/about" class="text-sm font-semibold text-slate-700 hover:text-cobalt-600 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-cobalt-400 after:rounded-full after:transition-all hover:after:w-full">
-          About
-        </a>
-        <a href="/projects" class="text-sm font-semibold text-slate-700 hover:text-cobalt-600 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-cobalt-400 after:rounded-full after:transition-all hover:after:w-full">
-          Projects
-        </a>
-        <a href="/blog" class="text-sm font-semibold text-slate-700 hover:text-cobalt-600 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-cobalt-400 after:rounded-full after:transition-all hover:after:w-full">
-          Blog
-        </a>
-        <a
-          href="/contact"
-          class="px-5 py-2.5 text-white text-sm font-semibold rounded-xl transition-all duration-300 shadow-sm active:scale-[0.97]" style="background: linear-gradient(135deg, #4f46e5, #6366f1);"
-          onmouseover="this.style.background='linear-gradient(135deg, #4338ca, #4f46e5)'"
-          onmouseout="this.style.background='linear-gradient(135deg, #4f46e5, #6366f1)'"
-        >
-          Contact
-        </a>
+        <a href="/" class="text-sm font-medium text-stone-700 hover:text-cobalt-600 transition-colors">Home</a>
+        <a href="/about" class="text-sm font-medium text-stone-700 hover:text-cobalt-600 transition-colors">About</a>
+        <a href="/projects" class="text-sm font-medium text-stone-700 hover:text-cobalt-600 transition-colors">Projects</a>
+        <a href="/blog" class="text-sm font-medium text-stone-700 hover:text-cobalt-600 transition-colors">Blog</a>
+        <a href="/contact" class="btn-primary text-sm">Contact</a>
       </nav>
-      <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl bg-white/60 backdrop-blur-xl text-slate-600 hover:bg-cobalt-50 hover:text-cobalt-600 transition-colors" aria-label="Toggle menu">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+      <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl bg-white/70 text-stone-600 hover:text-cobalt-600 transition-colors" aria-label="Toggle menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
     </div>
   </div>
-  <div id="mobile-menu" class="md:hidden hidden bg-white/70 backdrop-blur-2xl border-b border-white/30 shadow-soft">
+  <div id="mobile-menu" class="md:hidden hidden bg-white/90 backdrop-blur-xl border-b border-stone-200/30">
     <div class="px-6 py-4 space-y-1">
-      <a href="/" class="block px-4 py-3 text-slate-700 hover:bg-white/60 hover:text-cobalt-600 rounded-xl font-semibold transition-colors">Home</a>
-      <a href="/about" class="block px-4 py-3 text-slate-700 hover:bg-white/60 hover:text-cobalt-600 rounded-xl font-semibold transition-colors">About</a>
-      <a href="/projects" class="block px-4 py-3 text-slate-700 hover:bg-white/60 hover:text-cobalt-600 rounded-xl font-semibold transition-colors">Projects</a>
-      <a href="/blog" class="block px-4 py-3 text-slate-700 hover:bg-white/60 hover:text-cobalt-600 rounded-xl font-semibold transition-colors">Blog</a>
-      <a href="/contact" class="block px-4 py-3 text-white font-semibold rounded-xl transition-colors text-center mt-2" style="background: linear-gradient(135deg, #4f46e5, #6366f1);">Contact</a>
+      <a href="/" class="block px-4 py-3 text-stone-700 hover:text-cobalt-600 rounded-xl font-medium transition-colors">Home</a>
+      <a href="/about" class="block px-4 py-3 text-stone-700 hover:text-cobalt-600 rounded-xl font-medium transition-colors">About</a>
+      <a href="/projects" class="block px-4 py-3 text-stone-700 hover:text-cobalt-600 rounded-xl font-medium transition-colors">Projects</a>
+      <a href="/blog" class="block px-4 py-3 text-stone-700 hover:text-cobalt-600 rounded-xl font-medium transition-colors">Blog</a>
+      <a href="/contact" class="btn-primary justify-center mt-2 w-full">Contact</a>
     </div>
   </div>
 </header>
 
 <script>
-  const header = document.getElementById("site-header");
-  if (header) {
+  const h = document.getElementById("site-header");
+  if (h) {
     window.addEventListener("scroll", () => {
-      const y = window.scrollY;
-      if (y > 60) {
-        header.style.background = "rgba(255, 255, 255, 0.78)";
-        header.style.backdropFilter = "blur(20px)";
-        header.style.borderBottom = "1px solid rgba(186, 230, 253, 0.25)";
-        header.style.boxShadow = "0 1px 2px rgba(0,0,0,0.03), 0 8px 24px -6px rgba(0,0,0,0.05)";
-      } else {
-        header.style.background = "transparent";
-        header.style.backdropFilter = "none";
-        header.style.borderBottom = "1px solid transparent";
-        header.style.boxShadow = "none";
-      }
+      if (window.scrollY > 60) { h.classList.add("bg-white/85","backdrop-blur-xl","shadow-sm","border-b","border-stone-200/30"); h.classList.remove("bg-transparent"); }
+      else { h.classList.remove("bg-white/85","backdrop-blur-xl","shadow-sm","border-b","border-stone-200/30"); h.classList.add("bg-transparent"); }
     }, { passive: true });
   }
-
-  const btn = document.getElementById("mobile-menu-btn");
-  const menu = document.getElementById("mobile-menu");
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-    });
-  }
+  const b = document.getElementById("mobile-menu-btn"), m = document.getElementById("mobile-menu");
+  if (b && m) b.addEventListener("click", () => m.classList.toggle("hidden"));
 </script>
