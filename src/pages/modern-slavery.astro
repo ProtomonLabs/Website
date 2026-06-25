@@ -1,126 +1,24 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Base from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
+<Base title="Modern Slavery Statement"><Fragment slot="header"><Header /></Fragment>
 
-<BaseLayout title="Modern Slavery Statement">
-  <Fragment slot="header">
-    <Header />
-  </Fragment>
+  <section class="pt-28 pb-16" style="background:linear-gradient(135deg,#f8faff 0%,#ffffff 50%,#f5f3ff 100%)">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8"><div class="max-w-2xl"><p class="sl">Legal</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-gray-900 leading-tight mb-4">Modern slavery statement</h1><p class="text-sm text-gray-400">Published 20 June 2026</p></div></div>
+  </section>
 
-  <section class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-ocean-50/80 via-surface-lighter to-white">
-    <div class="absolute inset-0 bg-dots-lg" />
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-3xl">
-        <span class="section-label">Legal</span>
-        <h1 class="text-4xl md:text-5xl font-heading font-bold text-stone-900 leading-tight mb-6">
-          Modern Slavery<br />
-          <span class="gradient-text">statement</span>
-        </h1>
-        <p class="text-sm text-stone-400">Financial year: 2025–2026 · Published: 20 June 2026</p>
+  <section class="py-16 border-t border-gray-100">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8">
+      <div class="prose space-y-6">
+        <div><h2>1. Introduction</h2><p>Published pursuant to Section 54 of the Modern Slavery Act 2015. Protomon Labs is a computational genomics group operating solely in the UK with a supply chain limited to software services and cloud infrastructure.</p></div>
+        <div><h2>2. Policies</h2><p>Ethical Procurement Policy, Code of Conduct, and Whistleblowing Policy. All members are trained on the Modern Slavery Act.</p></div>
+        <div><h2>3. Due Diligence</h2><p>We engage with UK- and EEA-based suppliers. Cloud providers' modern slavery statements are reviewed annually.</p></div>
+        <div><h2>4. Risk Assessment</h2><p>Risk of modern slavery is very low. We review this assessment annually.</p></div>
+        <div><h2>5. Approval</h2><p>This statement was approved by Protomon Labs leadership and will be reviewed annually.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-20 bg-white">
-    <div class="max-w-3xl mx-auto px-6 lg:px-10">
-      <div class="prose-article space-y-8">
-        <div>
-          <h2>1. Introduction</h2>
-          <p>
-            This statement is made on behalf of Protomon Labs pursuant to Section 54 of the Modern Slavery Act 2015 and sets out the steps we have taken to ensure that slavery and human trafficking are not occurring in our supply chains or within our organisation.
-          </p>
-          <p>
-            Protomon Labs is a computational genomics research group. Our operations are based solely in the United Kingdom, and we maintain a small, transparent supply chain consisting primarily of software services, cloud computing infrastructure, and research publishing services.
-          </p>
-        </div>
-
-        <div>
-          <h2>2. Our Structure and Supply Chain</h2>
-          <p>
-            Protomon Labs is a research group operating within the academic sector in Cambridge, UK. Our supply chains are limited to:
-          </p>
-          <ul>
-            <li>Cloud computing and data storage providers (UK and EEA based)</li>
-            <li>Software-as-a-service platforms for research collaboration</li>
-            <li>Academic publishing and conference services</li>
-            <li>General administrative and IT services</li>
-          </ul>
-          <p>
-            Given the nature of our work, we do not engage in manufacturing, physical goods production, or any activity with a complex or geographically extended supply chain.
-          </p>
-        </div>
-
-        <div>
-          <h2>3. Our Policies</h2>
-          <p>We are committed to ensuring that modern slavery and human trafficking have no place in our organisation. Our policies include:</p>
-          <ul>
-            <li><strong>Ethical Procurement Policy</strong> — We prioritise suppliers who demonstrate commitment to ethical labour practices and human rights.</li>
-            <li><strong>Code of Conduct</strong> — All members of Protomon Labs are expected to conduct themselves ethically and report any concerns.</li>
-            <li><strong>Whistleblowing Policy</strong> — We maintain an open culture where concerns can be raised without fear of retaliation.</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2>4. Due Diligence</h2>
-          <p>
-            Given the low-risk nature of our operations and supply chains, we conduct proportionate due diligence:
-          </p>
-          <ul>
-            <li>We engage with UK-based or EEA-based suppliers who are themselves subject to the Modern Slavery Act or equivalent legislation</li>
-            <li>For cloud infrastructure providers, we review their published modern slavery statements and verify compliance</li>
-            <li>We review our supply chain annually to identify any changes in risk profile</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2>5. Risk Assessment</h2>
-          <p>
-            Our assessment confirms that the risk of modern slavery or human trafficking occurring in our operations or supply chains is very low due to:
-          </p>
-          <ul>
-            <li>Our operations being entirely UK-based</li>
-            <li>Our supply chain consisting of established, regulated service providers</li>
-            <li>The absence of manufacturing, physical production, or manual labour in our activities</li>
-          </ul>
-          <p>
-            We remain vigilant and will update our risk assessment should our activities or supply chain change.
-          </p>
-        </div>
-
-        <div>
-          <h2>6. Training</h2>
-          <p>
-            All members of Protomon Labs are made aware of the Modern Slavery Act 2015 and our commitment to ethical practices. Training on identifying and reporting concerns is provided as part of our onboarding process and reviewed annually.
-          </p>
-        </div>
-
-        <div>
-          <h2>7. Effectiveness</h2>
-          <p>
-            We assess the effectiveness of our anti-slavery measures through annual review of our supply chain, review of any reported concerns, and confirmation from our suppliers of their compliance with relevant legislation.
-          </p>
-          <p>
-            To date, no instances of modern slavery or human trafficking have been identified in our operations or supply chains.
-          </p>
-        </div>
-
-        <div>
-          <h2>8. Approval</h2>
-          <p>
-            This statement has been approved by the leadership of Protomon Labs and will be reviewed and updated annually.
-          </p>
-          <p class="text-stone-600 italic mt-6">
-            Signed for and on behalf of Protomon Labs<br />
-            Date: 19 June 2026
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <Fragment slot="footer">
-    <Footer />
-  </Fragment>
-</BaseLayout>
+<Fragment slot="footer"><Footer /></Fragment></Base>

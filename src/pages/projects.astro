@@ -1,45 +1,37 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Base from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import ProjectCard from "../components/ProjectCard.astro";
-
+import PC from "../components/ProjectCard.astro";
 const projects = [
-  { title: "Variant Annotation Infrastructure", description: "A unified platform integrating multi-omics data (ATAC-seq, ChIP-seq, Hi-C) and evolutionary conservation across 100+ vertebrate species into a single scalable pipeline for predicting the regulatory impact of any genomic variant.", tags: ["annotation platform", "regulatory genomics", "deep learning"], status: "active" as const },
-  { title: "Global Rare Variant Atlas", description: "An open infrastructure for characterizing rare variant burden across 100+ global populations from whole-genome sequencing data, providing standardized gene-level association resources and queryable population frequency databases.", tags: ["rare variants", "GWAS", "population infrastructure"], status: "active" as const },
-  { title: "Cross-population eQTL Mapping Framework", description: "Portable statistical infrastructure for expression QTL mapping in admixed and diverse populations, built with local ancestry deconvolution and designed for cross-study harmonization and reproducibility.", tags: ["eQTL", "statistical framework", "reproducibility"], status: "active" as const },
-  { title: "Enhancer-Gene Reference Map", description: "An open platform integrating chromatin conformation capture (Hi-C, Capture-C), epigenomic marks, and single-cell expression data to provide community reference maps of enhancer-gene regulation across human tissues.", tags: ["enhancers", "chromatin", "reference map"], status: "active" as const },
-  { title: "Cross-ancestry PRS Infrastructure", description: "A comprehensive benchmarking and evaluation platform for polygenic risk scores that accounts for differential LD patterns, allele frequencies, and genetic architectures across ancestries to improve portability.", tags: ["PRS", "benchmarking", "cross-ancestry"], status: "completed" as const },
-  { title: "Variant Annotation Benchmarking Platform", description: "Community-driven benchmarking infrastructure producing standards, evaluation frameworks, and best-practice recommendations for variant annotation tools in research and clinical settings.", tags: ["benchmarking", "standards", "annotation"], status: "completed" as const },
-  { title: "African Population Selection Atlas", description: "An open data infrastructure and analytical framework for detecting signatures of natural selection in African populations using whole-genome sequence data, providing reference resources for understudied populations.", tags: ["selection", "African populations", "open data"], status: "completed" as const },
+  {title:"Variant Annotation Infrastructure",description:"A unified platform integrating multi-omics data (ATAC-seq, ChIP-seq, Hi-C) and evolutionary conservation across 100+ vertebrate species into a scalable pipeline for variant impact prediction.",tags:["annotation","regulatory genomics","deep learning"],status:"active" as const},
+  {title:"Global Rare Variant Atlas",description:"An open infrastructure for characterizing rare variant burden across 100+ global populations from whole-genome sequencing data, providing standardized gene-level association resources.",tags:["rare variants","GWAS","population infrastructure"],status:"active" as const},
+  {title:"Cross-population eQTL Mapping Framework",description:"Portable statistical infrastructure for expression QTL mapping in admixed and diverse populations, built with local ancestry deconvolution.",tags:["eQTL","statistical framework","reproducibility"],status:"active" as const},
+  {title:"Enhancer-Gene Reference Map",description:"An open platform integrating chromatin conformation capture, epigenomic marks, and single-cell expression data to provide community reference maps of enhancer-gene regulation.",tags:["enhancers","chromatin","reference map"],status:"active" as const},
+  {title:"Cross-ancestry PRS Infrastructure",description:"A benchmarking and evaluation platform for polygenic risk scores that accounts for differential LD patterns and genetic architectures across ancestries.",tags:["PRS","benchmarking","cross-ancestry"],status:"completed" as const},
+  {title:"Variant Annotation Benchmarking Platform",description:"Community-driven benchmarking infrastructure producing standards and best-practice recommendations for variant annotation tools.",tags:["benchmarking","standards","annotation"],status:"completed" as const},
+  {title:"African Population Selection Atlas",description:"An open data infrastructure and analytical framework for detecting selection signatures in African populations using whole-genome sequence data.",tags:["selection","African populations","open data"],status:"completed" as const},
 ];
 ---
+<Base title="Projects"><Fragment slot="header"><Header /></Fragment>
 
-<BaseLayout title="Projects">
-  <Fragment slot="header"><Header /></Fragment>
-
-  <section class="pt-32 pb-16" style="background: linear-gradient(180deg, #fafaf9, #ffffff);">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-3xl">
-        <span class="section-label">Infrastructure</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold text-stone-900 leading-tight mb-6">Our <span class="text-cobalt-600">platforms</span></h1>
-        <p class="text-lg text-stone-600 max-w-xl">Current and completed infrastructure projects building the foundations for genomic discovery at scale.</p>
-      </div>
+  <section class="pt-28 pb-16" style="background:linear-gradient(135deg,#f8faff 0%,#ffffff 50%,#f5f3ff 100%)">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl"><p class="sl">Infrastructure</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-gray-900 leading-tight mb-5">Our platforms</h1><p class="text-lg text-gray-500 max-w-xl">Current and completed infrastructure projects building the foundations for genomic discovery at scale.</p></div>
     </div>
   </section>
 
-  <section class="py-16 bg-stone-50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="mb-8 flex flex-wrap items-center gap-3">
-        <span class="text-xs font-semibold text-stone-500 uppercase tracking-[0.1em]">Filter</span>
-        <span class="h-3 w-px bg-stone-200" />
-        <a href="/projects" class="px-3.5 py-1.5 bg-cobalt-600 text-white text-xs font-medium rounded-full">All</a>
-        <a href="/projects?status=active" class="px-3.5 py-1.5 bg-white text-stone-600 text-xs font-medium rounded-full border border-stone-200 hover:border-cobalt-200 transition-colors">Active</a>
-        <a href="/projects?status=completed" class="px-3.5 py-1.5 bg-white text-stone-600 text-xs font-medium rounded-full border border-stone-200 hover:border-cobalt-200 transition-colors">Completed</a>
+  <section class="py-16 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-wrap items-center gap-3 mb-8">
+        <span class="text-xs font-medium text-gray-400 uppercase tracking-widest">Filter</span>
+        <span class="w-px h-3 bg-gray-200" />
+        <a href="/projects" class="px-3 py-1 bg-cobalt-600 text-white text-xs font-medium rounded">All</a>
+        <a href="/projects?status=active" class="px-3 py-1 bg-white text-gray-600 text-xs font-medium rounded border border-gray-200 hover:border-cobalt-300">Active</a>
+        <a href="/projects?status=completed" class="px-3 py-1 bg-white text-gray-600 text-xs font-medium rounded border border-gray-200 hover:border-cobalt-300">Completed</a>
       </div>
-      <ProjectCard projects={projects} />
+      <PC projects={projects} />
     </div>
   </section>
 
-  <Fragment slot="footer"><Footer /></Fragment>
-</BaseLayout>
+<Fragment slot="footer"><Footer /></Fragment></Base>

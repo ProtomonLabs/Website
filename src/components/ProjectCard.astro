@@ -1,37 +1,22 @@
 ---
-export interface Project {
-  title: string;
-  description: string;
-  tags: string[];
-  status: "active" | "completed" | "in-review";
-}
-
-const { projects, maxDisplay }: { projects: Project[]; maxDisplay?: number } = Astro.props;
-const display = maxDisplay ? projects.slice(0, maxDisplay) : projects;
-
-const statusColors: Record<string, string> = {
-  active: "bg-cobalt-50/70 text-cobalt-700",
-  completed: "bg-stone-100 text-stone-600",
-  "in-review": "bg-amber-50/70 text-amber-700",
-};
-const statusLabels: Record<string, string> = { active: "Active", completed: "Completed", "in-review": "In Review" };
-const statusDots: Record<string, string> = { active: "bg-cobalt-500", completed: "bg-stone-400", "in-review": "bg-amber-500" };
+export interface P { title: string; description: string; tags: string[]; status: "active"|"completed"|"in-review"; }
+const { projects, maxDisplay } = Astro.props;
+const d = maxDisplay ? projects.slice(0, maxDisplay) : projects;
+const sc: Record<string,string> = { active:"background:#eef2ff;color:#4338ca", completed:"background:#f3f4f6;color:#4b5563", "in-review":"background:#fffbeb;color:#92400e" };
+const sd: Record<string,string> = { active:"background:#4f46e5", completed:"background:#9ca3af", "in-review":"background:#f59e0b" };
+const sl: Record<string,string> = { active:"Active", completed:"Completed", "in-review":"In Review" };
 ---
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-  {display.map((project) => (
-    <a href="/projects" class="card p-7 group block">
-      <div class="flex items-start justify-between gap-4 mb-3">
-        <h3 class="text-lg font-semibold text-stone-900 group-hover:text-cobalt-600 transition-colors leading-snug">{project.title}</h3>
-        <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium whitespace-nowrap ${statusColors[project.status]}`}>
-          <span class={`w-1.5 h-1.5 rounded-full mr-1.5 ${statusDots[project.status]}`} />
-          {statusLabels[project.status]}
+<div class="grid md:grid-cols-2 gap-5">
+  {d.map((p) => (
+    <div class="card">
+      <div class="flex items-start justify-between gap-3 mb-3">
+        <h3 class="font-heading font-semibold text-gray-900 leading-snug">{p.title}</h3>
+        <span class={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-medium whitespace-nowrap`} style={sc[p.status]}>
+          <span class="w-1.5 h-1.5 rounded-full" style={sd[p.status]} />{sl[p.status]}
         </span>
       </div>
-      <p class="text-stone-600 text-sm leading-relaxed mb-4 line-clamp-3">{project.description}</p>
-      <div class="flex flex-wrap gap-2">
-        {project.tags.map((tag) => (<span class="tag text-[11px]">{tag}</span>))}
-      </div>
-    </a>
+      <p class="text-sm text-gray-500 leading-relaxed mb-4">{p.description}</p>
+      <div class="flex flex-wrap gap-1.5">{p.tags.map((t) => (<span class="tag">{t}</span>))}</div>
+    </div>
   ))}
 </div>

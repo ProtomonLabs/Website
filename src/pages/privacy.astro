@@ -1,174 +1,27 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Base from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
+<Base title="Privacy"><Fragment slot="header"><Header /></Fragment>
 
-<BaseLayout title="Privacy">
-  <Fragment slot="header">
-    <Header />
-  </Fragment>
+  <section class="pt-28 pb-16" style="background:linear-gradient(135deg,#f8faff 0%,#ffffff 50%,#f5f3ff 100%)">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8"><div class="max-w-2xl"><p class="sl">Legal</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-gray-900 leading-tight mb-4">Privacy policy</h1><p class="text-sm text-gray-400">Last updated: 20 June 2026</p></div></div>
+  </section>
 
-  <section class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-ocean-50/80 via-surface-lighter to-white">
-    <div class="absolute inset-0 bg-dots-lg" />
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-3xl">
-        <span class="section-label">Legal</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold text-stone-900 leading-tight mb-6">
-          Privacy<br />
-          <span class="gradient-text">policy</span>
-        </h1>
-        <p class="text-sm text-stone-400">Last updated: 20 June 2026</p>
+  <section class="py-16 border-t border-gray-100">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8">
+      <div class="prose space-y-6">
+        <div><h2>1. Introduction</h2><p>Protomon Labs is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your information when you visit our website.</p><p>We comply with the UK GDPR and the Data Protection Act 2018.</p></div>
+        <div><h2>2. Data Controller</h2><p>Protomon Labs, Computational Genomics Lab, Cambridge, UK. Email: hello@protomonlabs.org</p></div>
+        <div><h2>3. Information We Collect</h2><p>Name, email, and message content from our contact form. Anonymised analytics data (no persistent cookies).</p></div>
+        <div><h2>4. Cookies</h2><p>We use privacy-preserving, cookie-free analytics. No advertising or marketing cookies are used.</p></div>
+        <div><h2>5. How We Use Your Data</h2><p>To respond to enquiries, improve our website, understand usage patterns, and comply with legal obligations. We do not sell or share your data.</p></div>
+        <div><h2>6. Data Retention</h2><p>Contact form submissions are retained for 12 months after correspondence concludes.</p></div>
+        <div><h2>7. Your Rights</h2><p>Under UK/EU GDPR: right of access, rectification, erasure, restriction, portability, and objection. Contact hello@protomonlabs.org.</p></div>
+        <div><h2>8. Contact</h2><p>hello@protomonlabs.org</p></div>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-20 bg-white">
-    <div class="max-w-3xl mx-auto px-6 lg:px-10">
-      <div class="prose-article space-y-8">
-        <div>
-          <h2>1. Introduction</h2>
-          <p>
-            Protomon Labs ("we", "our", "us") is committed to protecting the privacy of individuals who visit our website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at <strong>protomonlabs.org</strong>.
-          </p>
-          <p>
-            We comply with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. If you are located in the European Economic Area, additional protections under the EU GDPR may apply.
-          </p>
-        </div>
-
-        <div>
-          <h2>2. Data Controller</h2>
-          <p>
-            The data controller for information collected through this website is:
-          </p>
-          <p class="text-stone-700">
-            Protomon Labs<br />
-            Computational Genomics Lab<br />
-            Cambridge, UK<br />
-            Email: hello@protomonlabs.org
-          </p>
-        </div>
-
-        <div>
-          <h2>3. Information We Collect</h2>
-          <h3>3.1 Information you provide voluntarily</h3>
-          <p>We collect information you voluntarily submit via our contact form, including:</p>
-          <ul>
-            <li>Your name</li>
-            <li>Your email address</li>
-            <li>Your message and any information contained within it</li>
-          </ul>
-
-          <h3>3.2 Information collected automatically</h3>
-          <p>When you visit our website, certain information is collected automatically via analytics tools:</p>
-          <ul>
-            <li>Pages visited and time spent on each page</li>
-            <li>Referring website or source</li>
-            <li>Browser type and version</li>
-            <li>Device type and operating system</li>
-            <li>Approximate geographic location (at city level)</li>
-          </ul>
-          <p>This information is anonymised and used solely to understand how our site is used and to improve its content and performance.</p>
-        </div>
-
-        <div>
-          <h2>4. Lawful Basis for Processing</h2>
-          <p>We process your personal data under the following lawful bases:</p>
-          <ul>
-            <li><strong>Consent</strong> — for contact form submissions and non-essential cookies</li>
-            <li><strong>Legitimate interests</strong> — for website analytics to understand usage patterns and improve our content</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2>5. Cookies</h2>
-          <p>
-            This website uses minimal cookies. We use a privacy-preserving analytics service that does not use persistent cookies. No tracking cookies for advertising or marketing purposes are used.
-          </p>
-          <p>
-            Essential cookies required for the functioning of the website (such as session cookies) may be set. These do not require consent.
-          </p>
-        </div>
-
-        <div>
-          <h2>6. How We Use Your Information</h2>
-          <p>We use the information we collect for the following purposes:</p>
-          <ul>
-            <li>To respond to your enquiries and messages</li>
-            <li>To improve our website content and user experience</li>
-            <li>To understand general patterns of visitor interest in our research</li>
-            <li>To comply with legal obligations</li>
-          </ul>
-          <p>We do not sell, rent, or share your personal data with third parties for their marketing purposes.</p>
-        </div>
-
-        <div>
-          <h2>7. Data Retention</h2>
-          <p>
-            Contact form submissions are retained for a maximum of 12 months after the conclusion of the relevant correspondence, after which they are securely deleted. Analytics data is retained in aggregate form only.
-          </p>
-        </div>
-
-        <div>
-          <h2>8. Data Sharing and Transfers</h2>
-          <p>
-            We do not transfer your personal data outside the United Kingdom or the European Economic Area. Our website is hosted within the UK.
-          </p>
-          <p>
-            We may disclose your information if required to do so by law or in response to valid legal requests by public authorities.
-          </p>
-        </div>
-
-        <div>
-          <h2>9. Your Rights</h2>
-          <p>Under UK GDPR and EU GDPR, you have the following rights regarding your personal data:</p>
-          <ul>
-            <li><strong>Right of access</strong> — to request a copy of the data we hold about you</li>
-            <li><strong>Right to rectification</strong> — to request correction of inaccurate data</li>
-            <li><strong>Right to erasure</strong> — to request deletion of your data</li>
-            <li><strong>Right to restrict processing</strong> — to request limitation of how we use your data</li>
-            <li><strong>Right to data portability</strong> — to receive your data in a structured format</li>
-            <li><strong>Right to object</strong> — to object to processing based on legitimate interests</li>
-          </ul>
-          <p>
-            To exercise any of these rights, please contact us at <strong>hello@protomonlabs.org</strong>. We will respond to your request within 30 days.
-          </p>
-        </div>
-
-        <div>
-          <h2>10. Complaints</h2>
-          <p>
-            If you believe we have not handled your data in accordance with data protection law, you have the right to lodge a complaint with:
-          </p>
-          <p class="text-stone-700">
-            Information Commissioner's Office (ICO)<br />
-            Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF<br />
-            <a href="https://ico.org.uk" class="text-cobalt-600 underline decoration-cobalt-300/50 decoration-2 underline-offset-2 hover:text-cobalt-800 transition-colors">ico.org.uk</a>
-          </p>
-        </div>
-
-        <div>
-          <h2>11. Changes to This Policy</h2>
-          <p>
-            We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last updated" date. We encourage you to review this policy periodically.
-          </p>
-        </div>
-
-        <div>
-          <h2>12. Contact</h2>
-          <p>
-            If you have any questions about this Privacy Policy or our data practices, please contact us at:
-          </p>
-          <p class="text-stone-700">
-            Email: hello@protomonlabs.org<br />
-            Address: Protomon Labs, Computational Genomics Lab, Cambridge, UK
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <Fragment slot="footer">
-    <Footer />
-  </Fragment>
-</BaseLayout>
+<Fragment slot="footer"><Footer /></Fragment></Base>

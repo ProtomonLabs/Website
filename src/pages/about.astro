@@ -1,95 +1,45 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Base from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
+<Base title="About"><Fragment slot="header"><Header /></Fragment>
 
-<BaseLayout title="About">
-  <Fragment slot="header"><Header /></Fragment>
-
-  <section class="pt-32 pb-16" style="background: linear-gradient(180deg, #fafaf9, #ffffff);">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-3xl">
-        <span class="section-label">About</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold text-stone-900 leading-tight mb-6">
-          Infrastructure for<br /><span class="text-cobalt-600">the genome</span>
-        </h1>
-        <p class="text-lg text-stone-600 max-w-xl">
-          Protomon Labs builds the platforms, standards, and tools that make genomic research possible at scale — the infrastructure layer for modern genomics.
-        </p>
-      </div>
+  <section class="pt-28 pb-16" style="background:linear-gradient(135deg,#f8faff 0%,#ffffff 50%,#f5f3ff 100%)">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl"><p class="sl">About</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-gray-900 leading-tight mb-5">Infrastructure for the genome</h1><p class="text-lg text-gray-500 max-w-xl">Protomon Labs builds the platforms, standards, and tools that make genomic research possible at scale.</p></div>
     </div>
   </section>
 
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-        <div class="md:col-span-1">
-          <div class="w-full aspect-[3/4] rounded-2xl bg-cobalt-50 flex items-center justify-center border border-stone-200/40">
-            <img src="/logo.svg" alt="Protomon Labs" class="w-32 h-32 opacity-30" />
-          </div>
-        </div>
-        <div class="md:col-span-2">
-          <div class="space-y-5 text-stone-700 leading-relaxed">
-            <p>Genomic research today faces a critical infrastructure gap. Data generation outpaces our capacity to process, standardize, and share it. Variant interpretation requires coordinated pipelines, reference resources, and benchmarking frameworks that don't exist as off-the-shelf solutions. We build them.</p>
-            <p>Protomon Labs develops the computational infrastructure that powers genomic discovery at scale. Our work spans variant annotation platforms, population-scale data resources, statistical method frameworks, and open benchmarking infrastructure — all designed from the ground up for reproducibility, portability, and community reuse.</p>
-            <p>Everything we build is open source. We believe the foundational layer of genomics should be a shared resource — maintained collaboratively, available freely, and built to last.</p>
-          </div>
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-10 items-start">
+        <div class="md:col-span-1"><div class="aspect-[3/4] rounded-xl bg-gray-50 flex items-center justify-center border border-gray-100"><img src="/logo.svg" alt="" class="w-28 h-28 opacity-30" /></div></div>
+        <div class="md:col-span-2 space-y-4 text-gray-600 leading-relaxed">
+          <p>Genomic research today faces a critical infrastructure gap. Data generation outpaces our capacity to process, standardize, and share it. Variant interpretation requires coordinated pipelines, reference resources, and benchmarking frameworks that don't exist as off-the-shelf solutions. We build them.</p>
+          <p>Protomon Labs develops the computational infrastructure that powers genomic discovery at scale. Our work spans variant annotation platforms, population-scale data resources, statistical method frameworks, and open benchmarking infrastructure — all designed for reproducibility, portability, and community reuse.</p>
+          <p>Everything we build is open source. The foundational layer of genomics should be a shared resource — maintained collaboratively, available freely, and built to last.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-stone-50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-xl mb-12">
-        <span class="section-label">Infrastructure</span>
-        <h2 class="text-4xl font-heading font-bold text-stone-900 leading-tight">What we <span class="gradient-text">build</span></h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {[
-          { title: "Variant Annotation Platforms", items: ["Unified annotation pipelines for WGS and WES at population scale", "Multi-omics data integration frameworks", "Cloud-native analysis infrastructure", "Real-time variant prioritization systems", "Benchmarking and validation toolchains"] },
-          { title: "Population Genomics Infrastructure", items: ["Cross-population frequency databases", "Ancestry-aware analysis frameworks", "Rare variant burden testing platforms", "Demographic inference tooling", "Admixture mapping infrastructure"] },
-          { title: "Open Data Resources", items: ["Standardized variant catalogues", "Reference panels for diverse populations", "Annotation knowledge bases", "Community benchmarking datasets", "Reproducible analysis recipes"] },
-          { title: "Statistical Method Frameworks", items: ["Portable eQTL mapping infrastructure", "Fine-mapping pipelines for complex traits", "PRS evaluation and benchmarking tools", "Mendelian randomization frameworks", "High-dimensional omics integration"] },
-        ].map((area) => (
-          <div class="card p-7">
-            <h3 class="text-lg font-semibold text-stone-900 mb-4">{area.title}</h3>
-            <ul class="space-y-2">
-              {area.items.map((item) => (
-                <li class="flex items-center gap-3 text-sm text-stone-600">
-                  <span class="w-1.5 h-1.5 rounded-full bg-cobalt-400/60 flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="max-w-xl mb-10"><p class="sl">Infrastructure</p><h2 class="text-3xl font-heading font-bold text-gray-900">What we build</h2></div>
+      <div class="grid md:grid-cols-2 gap-5">
+        {[{t:"Variant Annotation Platforms",i:["Unified pipelines for WGS and WES","Multi-omics data integration","Cloud-native analysis infrastructure","Real-time variant prioritization","Benchmarking and validation toolchains"]},{t:"Population Genomics Infrastructure",i:["Cross-population frequency databases","Ancestry-aware analysis frameworks","Rare variant burden testing platforms","Demographic inference tooling","Admixture mapping infrastructure"]},{t:"Open Data Resources",i:["Standardized variant catalogues","Reference panels for diverse populations","Annotation knowledge bases","Community benchmarking datasets","Reproducible analysis recipes"]},{t:"Statistical Method Frameworks",i:["Portable eQTL mapping infrastructure","Fine-mapping pipelines for complex traits","PRS evaluation and benchmarking tools","Mendelian randomization frameworks","High-dimensional omics integration"]}].map((a)=>(<div class="card"><h3 class="font-heading font-semibold text-gray-900 mb-3">{a.t}</h3><ul class="space-y-1.5">{a.i.map((i)=>(<li class="flex items-start gap-2 text-sm text-gray-500"><span class="w-1.5 h-1.5 rounded-full bg-cobalt-400 mt-1.5 flex-shrink-0" />{i}</li>))}</ul></div>))}
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-xl mb-12">
-        <span class="section-label">Values</span>
-        <h2 class="text-4xl font-heading font-bold text-stone-900 leading-tight">How we <span class="gradient-text">build</span></h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {[
-          { title: "Open by Default", desc: "Every platform, pipeline, and standard we develop is released openly. Infrastructure only works when everyone can use it." },
-          { title: "Built for Scale", desc: "We design for millions of genomes, not thousands. Our infrastructure handles production-grade workloads from day one." },
-          { title: "Community Standards", desc: "We work with consortia and standards bodies to ensure our infrastructure interoperates across the broader genomics ecosystem." },
-          { title: "Reproducible by Design", desc: "Containers, versioned workflows, and comprehensive documentation — reproducibility is a feature, not an afterthought." },
-        ].map((v) => (
-          <div class="card p-7">
-            <h3 class="font-semibold text-stone-900 mb-2">{v.title}</h3>
-            <p class="text-stone-600 text-sm leading-relaxed">{v.desc}</p>
-          </div>
-        ))}
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="max-w-xl mb-10"><p class="sl">Values</p><h2 class="text-3xl font-heading font-bold text-gray-900">How we build</h2></div>
+      <div class="grid md:grid-cols-4 gap-5">
+        {[{n:"Open by Default",d:"Every platform, pipeline, and standard we develop is released openly."},{n:"Built for Scale",d:"We design for millions of genomes, not thousands."},{n:"Community Standards",d:"We work with consortia to ensure our infrastructure interoperates."},{n:"Reproducible by Design",d:"Containers, versioned workflows, and documentation are built in."}].map((v)=>(<div class="card"><h3 class="font-heading font-semibold text-gray-900 mb-2">{v.n}</h3><p class="text-sm text-gray-500 leading-relaxed">{v.d}</p></div>))}
       </div>
     </div>
   </section>
 
-  <Fragment slot="footer"><Footer /></Fragment>
-</BaseLayout>
+<Fragment slot="footer"><Footer /></Fragment></Base>

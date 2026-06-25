@@ -1,93 +1,62 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Base from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import ResearchFocus from "../components/ResearchFocus.astro";
-import ProjectCard from "../components/ProjectCard.astro";
-import BlogCard from "../components/BlogCard.astro";
+import RF from "../components/ResearchFocus.astro";
+import PC from "../components/ProjectCard.astro";
+import BC from "../components/BlogCard.astro";
 ---
+<Base title="Home"><Fragment slot="header"><Header /></Fragment>
 
-<BaseLayout title="Home">
-  <Fragment slot="header"><Header /></Fragment>
-
-  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden" style="background: linear-gradient(135deg, #fafaf9, #ffffff, #eef2ff);">
-    <div class="absolute inset-0 bg-subtle-grid" />
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 w-full">
-      <div class="max-w-3xl">
-        <span class="section-label animate-up">Genomics Infrastructure Lab</span>
-        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-stone-900 leading-[0.90] tracking-tight mb-8 animate-up animate-up-d1">
-          Infrastructure<br />
-          <span class="gradient-text-warm">for the</span><br />
-          genome
-        </h1>
-        <p class="text-lg md:text-xl text-stone-600 max-w-xl leading-relaxed mb-8 animate-up animate-up-d2">
-          Protomon Labs builds the platforms, standards, and tools that underpin genomic discovery at scale — from variant annotation infrastructure to population-scale data resources.
-        </p>
-        <div class="flex flex-wrap gap-4 animate-up animate-up-d3">
-          <a href="/projects" class="btn-primary text-base px-8 py-3">Explore our work <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a>
-          <a href="/about" class="btn-secondary text-base px-8 py-3">About the lab</a>
-        </div>
+  <section class="min-h-[85vh] flex items-center pt-16" style="background:linear-gradient(135deg,#f8faff 0%,#ffffff 50%,#f5f3ff 100%)">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20 w-full">
+      <div class="max-w-2xl">
+        <p class="sl animate-rise">Genomics Infrastructure Lab</p>
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-gray-900 leading-[0.90] mb-6 animate-rise d1">Infrastructure<br/>for the genome</h1>
+        <p class="text-lg text-gray-500 max-w-lg leading-relaxed mb-10 animate-rise d2">Protomon Labs builds the platforms, standards, and tools that underpin genomic discovery at scale.</p>
+        <div class="flex gap-3 animate-rise d3"><a href="/projects" class="btn-p">Explore our work</a><a href="/about" class="btn-s">About the lab</a></div>
       </div>
     </div>
   </section>
 
-  <ResearchFocus />
+  <RF />
 
-  <section class="py-24 bg-stone-50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="flex items-end justify-between mb-12">
-        <div>
-          <span class="section-label">Platforms</span>
-          <h2 class="text-4xl font-heading font-bold text-stone-900 leading-tight">Current <span class="gradient-text">projects</span></h2>
-        </div>
-        <a href="/projects" class="hidden md:inline-flex items-center gap-1 text-sm font-medium text-cobalt-600 hover:text-cobalt-800 transition-colors">View all <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a>
+        <div><p class="sl">Platforms</p><h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900">Current projects</h2></div>
+        <a href="/projects" class="hidden md:inline-flex items-center gap-1 text-sm text-cobalt-600 hover:text-cobalt-700 font-medium">View all <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
-      <ProjectCard projects={[
-        { title: "Variant Annotation Infrastructure", description: "A unified platform integrating multi-omics data, evolutionary conservation, and regulatory annotations into a scalable pipeline for variant impact prediction across the genome.", tags: ["annotation platform", "regulatory genomics", "deep learning"], status: "active" },
-        { title: "Global Rare Variant Atlas", description: "An open infrastructure for characterizing rare variant burden across 100+ populations, providing standardized gene-level association resources and queryable population frequency data.", tags: ["rare variants", "GWAS", "population infrastructure"], status: "active" },
-        { title: "Cross-population eQTL Framework", description: "Portable statistical infrastructure for expression QTL mapping in admixed and diverse populations, designed for reproducibility and cross-study harmonization.", tags: ["eQTL", "statistical framework", "reproducibility"], status: "in-review" },
-      ]} />
-      <div class="mt-6 text-center md:hidden"><a href="/projects" class="inline-flex items-center gap-1 text-sm font-medium text-cobalt-600 hover:text-cobalt-800 transition-colors">View all projects <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a></div>
+      <PC projects={[{title:"Variant Annotation Infrastructure",description:"A unified platform integrating multi-omics data and evolutionary conservation into a scalable pipeline for variant impact prediction.",tags:["annotation","regulatory genomics","deep learning"],status:"active"},{title:"Global Rare Variant Atlas",description:"An open infrastructure for rare variant burden across 100+ populations with standardized gene-level association resources.",tags:["rare variants","GWAS","population infrastructure"],status:"active"},{title:"Cross-population eQTL Framework",description:"Portable statistical infrastructure for eQTL mapping in diverse populations, designed for cross-study harmonization.",tags:["eQTL","statistical framework","reproducibility"],status:"in-review"}]} />
     </div>
   </section>
 
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+  <section class="py-20 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        {[{ n: "7+", l: "Platforms in Development" }, { n: "15+", l: "Open-source Tools" }, { n: "5+", l: "Active Collaborations" }, { n: "200K+", l: "Variants Catalogued" }].map((s, i) => (
-          <div class={`animate-up${i > 0 ? ` animate-up-d${i}` : ""}`}>
-            <div class="text-4xl md:text-5xl font-heading font-bold gradient-text mb-2 leading-none">{s.n}</div>
-            <div class="text-[11px] uppercase tracking-[0.18em] text-stone-500 font-semibold">{s.l}</div>
-          </div>
+        {[{n:"7+",l:"Platforms"},{n:"15+",l:"Open-source Tools"},{n:"5+",l:"Collaborations"},{n:"200K+",l:"Variants Catalogued"}].map((s,i)=>(
+          <div><div class="text-4xl md:text-5xl font-heading font-bold text-cobalt-600 mb-1">{s.n}</div><div class="text-xs uppercase tracking-widest text-gray-400 font-medium">{s.l}</div></div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="py-24 bg-stone-50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-xl mb-12">
-        <span class="section-label">Journal</span>
-        <h2 class="text-4xl font-heading font-bold text-stone-900 leading-tight">Latest <span class="gradient-text">writing</span></h2>
-      </div>
-      <BlogCard posts={[
-        { title: "Building a Variant Annotation Infrastructure", description: "A practical guide to designing scalable, reproducible variant annotation infrastructure for production-grade genomic analysis across diverse populations.", pubDate: new Date("2026-06-15"), tags: ["tutorial", "infrastructure", "annotation"], slug: "variant-annotation-pipelines" },
-        { title: "Infrastructure Approaches to Non-coding GWAS", description: "How platform thinking — integrated data layers, standardized pipelines, and open resources — is transforming fine-mapping of non-coding GWAS signals.", pubDate: new Date("2026-06-10"), tags: ["GWAS", "infrastructure", "non-coding"], slug: "non-coding-gwas-loci" },
-      ]} />
-      <div class="mt-8 text-center"><a href="/blog" class="btn-primary">Read the journal <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a></div>
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="max-w-xl mb-12"><p class="sl">Journal</p><h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900">Latest writing</h2></div>
+      <BC posts={[{title:"Building a Variant Annotation Infrastructure",description:"A practical guide to designing scalable, reproducible variant annotation infrastructure for production-grade genomic analysis.",pubDate:new Date("2026-06-15"),tags:["tutorial","infrastructure","annotation"],slug:"variant-annotation-pipelines"},{title:"Infrastructure Approaches to Non-coding GWAS",description:"How platform thinking is transforming fine-mapping of non-coding GWAS signals through integrated data layers.",pubDate:new Date("2026-06-10"),tags:["GWAS","infrastructure","non-coding"],slug:"non-coding-gwas-loci"}]} />
+      <div class="mt-8 text-center"><a href="/blog" class="btn-p">Read the journal</a></div>
     </div>
   </section>
 
-  <section class="py-24" style="background: linear-gradient(135deg, #312e81, #0c4a6e);">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 text-center">
-      <div class="max-w-2xl mx-auto">
-        <span class="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-stone-400 mb-5"><span class="w-6 h-px bg-stone-400/30" /> Collaborate <span class="w-6 h-px bg-stone-400/30" /></span>
-        <h2 class="text-4xl md:text-5xl font-heading font-bold text-white leading-tight mb-5">Building the foundations<br />of genomic discovery</h2>
-        <p class="text-stone-300 text-lg max-w-lg mx-auto mb-8 leading-relaxed">We partner with sequencing centers, biobanks, disease consortia, and tool developers. If you're building at genomic scale, we should talk.</p>
-        <a href="/contact" class="inline-flex items-center px-8 py-3.5 bg-white hover:bg-stone-50 text-cobalt-700 font-semibold rounded-xl transition-all duration-300 shadow-md active:scale-[0.97]">Get in touch <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></a>
+  <section class="py-24 bg-cobalt-600">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
+      <div class="max-w-lg mx-auto">
+        <h2 class="text-3xl font-heading font-bold text-white mb-4">Building the foundations of genomic discovery</h2>
+        <p class="text-cobalt-200 leading-relaxed mb-8">We partner with sequencing centers, biobanks, and tool developers working at genomic scale.</p>
+        <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 text-cobalt-700 font-medium rounded-lg transition-all active:scale-[0.97]">Get in touch →</a>
       </div>
     </div>
   </section>
 
-  <Fragment slot="footer"><Footer /></Fragment>
-</BaseLayout>
+<Fragment slot="footer"><Footer /></Fragment></Base>

@@ -1,134 +1,24 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Base from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
+<Base title="Open Source"><Fragment slot="header"><Header /></Fragment>
 
-<BaseLayout title="Open Source">
-  <Fragment slot="header">
-    <Header />
-  </Fragment>
+  <section class="pt-28 pb-16" style="background:linear-gradient(135deg,#f8faff 0%,#ffffff 50%,#f5f3ff 100%)">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8"><div class="max-w-2xl"><p class="sl">Community</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-gray-900 leading-tight mb-4">Open source</h1><p class="text-lg text-gray-500 max-w-xl">Every platform, pipeline, and standard we build is released openly. The infrastructure layer of genomics should be a shared resource.</p></div></div>
+  </section>
 
-  <section class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-ocean-50/80 via-surface-lighter to-white">
-    <div class="absolute inset-0 bg-dots-lg" />
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-3xl">
-        <span class="section-label">Community</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold text-stone-900 leading-tight mb-6">
-          Open<br />
-          <span class="gradient-text">source</span>
-        </h1>
-        <p class="text-lg text-stone-600 leading-relaxed max-w-xl">Every platform, pipeline, and standard we build is released openly. The infrastructure layer of genomics should be a shared resource.</p>
+  <section class="py-16 border-t border-gray-100">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8">
+      <div class="prose space-y-8">
+        <div><h2>Our Commitment</h2><p>All software tools, analysis pipelines, and statistical methods developed at Protomon Labs are released under open-source licences. We maintain active repositories on GitHub.</p></div>
+        <div><h2>Licensing</h2><p><strong>MIT License:</strong> Used for most software tools, utility libraries, and analysis scripts.</p><p><strong>GNU GPL v3:</strong> Used for core statistical method implementations and pipeline frameworks.</p></div>
+        <div><h2>Repositories</h2><p>variant-impact-prediction · global-rare-variants · eqtl-admixed · variant-annotation-benchmark</p></div>
+        <div><h2>Contributing</h2><p>We welcome contributions. See CONTRIBUTING.md in each repository.</p></div>
+        <div><h2>Contact</h2><p>hello@protomonlabs.org</p></div>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-20 bg-white">
-    <div class="max-w-3xl mx-auto px-6 lg:px-10">
-      <div class="prose-article space-y-8">
-        <div>
-          <h2>Our Commitment</h2>
-          <p>
-            Protomon Labs is committed to the principles of open science. We believe that computational methods and software developed with public funding should be freely available for anyone to use, inspect, modify, and distribute. Transparency and reproducibility are foundational to rigorous science.
-          </p>
-          <p>
-            All software tools, analysis pipelines, and statistical methods developed in our lab are released under open-source licences. We maintain active repositories on GitHub where our code is openly developed and versioned.
-          </p>
-        </div>
-
-        <div>
-          <h2>Licensing</h2>
-          <p>
-            Unless otherwise noted in the respective repository, all software developed at Protomon Labs is licensed under one of the following:
-          </p>
-          <div class="bg-stone-100 rounded-xl p-6 border border-stone-100/50 my-6">
-            <h3 class="text-lg font-heading font-semibold text-stone-900 mb-3">MIT License</h3>
-            <p class="text-sm text-stone-700 mb-2">
-              The MIT License is a permissive, short-and-simple notice that lets anyone do anything with the code as long as they provide attribution back and don't hold us liable.
-            </p>
-            <p class="text-sm text-stone-600">
-              Used for: most software tools, utility libraries, and analysis scripts.
-            </p>
-          </div>
-          <div class="bg-stone-100 rounded-xl p-6 border border-stone-100/50 my-6">
-            <h3 class="text-lg font-heading font-semibold text-stone-900 mb-3">GNU General Public License v3 (GPL-3.0)</h3>
-            <p class="text-sm text-stone-700 mb-2">
-              The GPL-3.0 is a strong copyleft licence that requires derivative works to be distributed under the same licence terms, ensuring that modifications remain free and open.
-            </p>
-            <p class="text-sm text-stone-600">
-              Used for: core statistical method implementations and pipeline frameworks where we want to ensure derivative works remain open.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h2>Repositories</h2>
-          <p>
-            Our open-source code is hosted on GitHub under the <strong>Protomon Labs</strong> organisation. Key repositories include:
-          </p>
-          <div class="space-y-4 my-6">
-            <div class="card p-5">
-              <h3 class="font-heading font-semibold text-stone-900 mb-1">variant-impact-prediction</h3>
-              <p class="text-sm text-stone-600 mb-2">Deep learning models for predicting regulatory impact of non-coding variants, integrating multi-omics data and evolutionary conservation.</p>
-              <span class="tag text-[11px]">Python</span>
-              <span class="tag text-[11px]">PyTorch</span>
-              <span class="tag text-[11px]">MIT</span>
-            </div>
-            <div class="card p-5">
-              <h3 class="font-heading font-semibold text-stone-900 mb-1">global-rare-variants</h3>
-              <p class="text-sm text-stone-600 mb-2">Rare variant burden analysis framework for whole-genome sequencing data across diverse global populations.</p>
-              <span class="tag text-[11px]">R</span>
-              <span class="tag text-[11px]">Python</span>
-              <span class="tag text-[11px]">GPL-3.0</span>
-            </div>
-            <div class="card p-5">
-              <h3 class="font-heading font-semibold text-stone-900 mb-1">eqtl-admixed</h3>
-              <p class="text-sm text-stone-600 mb-2">Statistical framework for expression QTL mapping in admixed populations leveraging local ancestry information.</p>
-              <span class="tag text-[11px]">R</span>
-              <span class="tag text-[11px]">C++</span>
-              <span class="tag text-[11px]">GPL-3.0</span>
-            </div>
-            <div class="card p-5">
-              <h3 class="font-heading font-semibold text-stone-900 mb-1">variant-annotation-benchmark</h3>
-              <p class="text-sm text-stone-600 mb-2">Benchmarking framework and community recommendations for variant annotation tools in clinical and research settings.</p>
-              <span class="tag text-[11px]">Python</span>
-              <span class="tag text-[11px]">Nextflow</span>
-              <span class="tag text-[11px]">MIT</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h2>Contributing</h2>
-          <p>
-            We welcome contributions from the community — whether bug reports, feature requests, documentation improvements, or code contributions. Please see the CONTRIBUTING.md file in each repository for guidelines.
-          </p>
-          <p>
-            By contributing to our repositories, you agree that your contributions will be licensed under the same licence as the project you are contributing to.
-          </p>
-        </div>
-
-        <div>
-          <h2>Data</h2>
-          <p>
-            Where possible, we also make our analysis datasets and supplementary materials available under open-data licences (CC-BY 4.0 or equivalent). Data that cannot be openly shared due to privacy or consent restrictions is made available through managed access processes.
-          </p>
-        </div>
-
-        <div>
-          <h2>Support</h2>
-          <p>
-            Our open-source projects are maintained by the members of Protomon Labs. While we strive to respond to issues and questions in a timely manner, please understand that our primary commitment is to our research. Community contributions and discussions are encouraged and appreciated.
-          </p>
-          <p>
-            For questions about any of our open-source projects, please open an issue on the relevant GitHub repository or contact us at hello@protomonlabs.org.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <Fragment slot="footer">
-    <Footer />
-  </Fragment>
-</BaseLayout>
+<Fragment slot="footer"><Footer /></Fragment></Base>

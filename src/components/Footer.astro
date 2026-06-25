@@ -1,39 +1,48 @@
-<footer class="bg-stone-900">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
-    <div class="flex flex-col md:flex-row items-start gap-12">
-      <div class="md:w-1/2">
+<footer class="bg-gray-50 border-t border-gray-200">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
         <div class="flex items-center gap-3 mb-4">
-          <img src="/logo.svg" alt="Protomon Labs" class="w-9 h-9 brightness-[10] opacity-90" />
-          <span class="text-xl font-heading font-semibold text-white tracking-tight">Protomon<span class="text-cobalt-400"> Labs</span></span>
+          <div class="w-8 h-8 rounded-lg bg-cobalt-600 flex items-center justify-center">
+            <img src="/logo.svg" alt="" class="w-6 h-6" style="filter:brightness(10)" />
+          </div>
+          <span class="text-base font-heading font-semibold tracking-tight text-gray-900">Protomon Labs</span>
         </div>
-        <p class="text-stone-400 text-sm leading-relaxed max-w-md">Building the platforms, standards, and tools that underpin genomic discovery at scale.</p>
-        <div class="flex gap-4 mt-5">
-          <span class="text-stone-500 text-sm hover:text-stone-300 cursor-default transition-colors">GitHub</span>
-          <span class="text-stone-500 text-sm hover:text-stone-300 cursor-default transition-colors">Google Scholar</span>
-          <span class="text-stone-500 text-sm hover:text-stone-300 cursor-default transition-colors">ORCID</span>
-          <span class="text-stone-500 text-sm hover:text-stone-300 cursor-default transition-colors">Bluesky</span>
+        <p class="text-sm text-gray-500 leading-relaxed max-w-sm mb-6">
+          Building the platforms, standards, and tools that underpin genomic discovery at scale.
+        </p>
+        <div class="flex items-center gap-3">
+          <span class="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-cobalt-600 cursor-pointer transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </span>
+          <span class="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-cobalt-600 cursor-pointer transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.782 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.002 5.367 18.641 0 12.017 0z"/></svg>
+          </span>
         </div>
       </div>
       <div>
-        <h4 class="font-semibold text-stone-400 text-xs uppercase tracking-[0.12em] mb-4">Pages</h4>
+        <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Navigate</h4>
         <ul class="space-y-2.5">
-          <li><a href="/" class="text-stone-300/80 hover:text-white transition-colors text-sm">Home</a></li>
-          <li><a href="/about" class="text-stone-300/80 hover:text-white transition-colors text-sm">About</a></li>
-          <li><a href="/projects" class="text-stone-300/80 hover:text-white transition-colors text-sm">Projects</a></li>
-          <li><a href="/blog" class="text-stone-300/80 hover:text-white transition-colors text-sm">Blog</a></li>
-          <li><a href="/open-source" class="text-stone-300/80 hover:text-white transition-colors text-sm">Open Source</a></li>
-          <li><a href="/contact" class="text-stone-300/80 hover:text-white transition-colors text-sm">Contact</a></li>
+          <li><a href="/" class="text-sm text-gray-600 hover:text-cobalt-600 transition-colors">Home</a></li>
+          <li><a href="/about" class="text-sm text-gray-600 hover:text-cobalt-600 transition-colors">About</a></li>
+          <li><a href="/projects" class="text-sm text-gray-600 hover:text-cobalt-600 transition-colors">Projects</a></li>
+          <li><a href="/blog" class="text-sm text-gray-600 hover:text-cobalt-600 transition-colors">Blog</a></li>
+          <li><a href="/contact" class="text-sm text-gray-600 hover:text-cobalt-600 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Legal</h4>
+        <ul class="space-y-2.5">
+          <li><a href="/privacy" class="text-sm text-gray-600 hover:text-cobalt-600 transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms" class="text-sm text-gray-600 hover:text-cobalt-600 transition-colors">Terms &amp; Conditions</a></li>
+          <li><a href="/modern-slavery" class="text-sm text-gray-600 hover:text-cobalt-600 transition-colors">Modern Slavery Statement</a></li>
+          <li><a href="/open-source" class="text-sm text-gray-600 hover:text-cobalt-600 transition-colors">Open Source</a></li>
         </ul>
       </div>
     </div>
-    <div class="border-t border-stone-800 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-stone-500 text-xs">&copy; {new Date().getFullYear()} Protomon Labs. All rights reserved.</p>
-      <div class="flex gap-5 text-xs">
-        <a href="/privacy" class="text-stone-500 hover:text-stone-300 transition-colors">Privacy</a>
-        <a href="/terms" class="text-stone-500 hover:text-stone-300 transition-colors">Terms</a>
-        <a href="/modern-slavery" class="text-stone-500 hover:text-stone-300 transition-colors">Modern Slavery</a>
-        <a href="/open-source" class="text-stone-500 hover:text-stone-300 transition-colors">Open Source</a>
-      </div>
+    <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-gray-400">&copy; {new Date().getFullYear()} Protomon Labs. All rights reserved.</p>
+      <p class="text-xs text-gray-400">Infrastructure for the genome.</p>
     </div>
   </div>
 </footer>

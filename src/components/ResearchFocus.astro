@@ -1,22 +1,21 @@
 ---
 const areas = [
-  { title: "Genomic Data Platforms", description: "Scalable infrastructure for managing, querying, and analyzing genome-scale data across populations — from variant call standardization to cloud-native analysis pipelines." },
-  { title: "Variant Annotation Infrastructure", description: "Standardized pipelines, benchmarking frameworks, and community reference resources for consistent, reproducible interpretation of genetic variation at any scale." },
-  { title: "Open Science Toolchains", description: "Computational frameworks, open datasets, and collaborative platforms that empower the global genomics community to build on shared foundations." },
+  { title: "Genomic Data Platforms", description: "Scalable infrastructure for managing, querying, and analyzing genome-scale data across populations." },
+  { title: "Variant Annotation Infrastructure", description: "Standardized pipelines and community resources for reproducible interpretation of genetic variation at scale." },
+  { title: "Open Science Toolchains", description: "Computational frameworks and open datasets that empower the global genomics community." },
 ];
 ---
-
-<section class="py-24">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+<section class="py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div class="max-w-xl mb-12">
-      <span class="section-label">Infrastructure</span>
-      <h2 class="text-4xl font-heading font-bold text-stone-900 leading-tight">What we <span class="gradient-text">build</span></h2>
+      <p class="sl">Infrastructure</p>
+      <h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900">What we build</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <div class="grid md:grid-cols-3 gap-5">
       {areas.map((a) => (
-        <div class="card p-8">
-          <h3 class="text-xl font-semibold text-stone-900 mb-3">{a.title}</h3>
-          <p class="text-stone-600 text-sm leading-relaxed">{a.description}</p>
+        <div class="card">
+          <h3 class="text-lg font-heading font-semibold text-gray-900 mb-2">{a.title}</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">{a.description}</p>
         </div>
       ))}
     </div>
