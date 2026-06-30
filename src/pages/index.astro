@@ -3,7 +3,6 @@ import Base from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import RF from "../components/ResearchFocus.astro";
-import PC from "../components/ProjectCard.astro";
 import BC from "../components/BlogCard.astro";
 ---
 <Base title="Home"><Fragment slot="header"><Header /></Fragment>
@@ -12,7 +11,7 @@ import BC from "../components/BlogCard.astro";
     <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20 w-full">
       <div class="max-w-2xl">
         <p class="sl animate-rise">Genomics Infrastructure Lab</p>
-        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-gray-900 leading-[0.90] mb-6 animate-rise d1">Infrastructure<br/>for the genome</h1>
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-gray-900 leading-[0.90] mb-6 animate-rise d1"><span class="gradient-text">Infrastructure</span><br/>for the genome</h1>
         <p class="text-lg text-gray-500 max-w-lg leading-relaxed mb-10 animate-rise d2">Protomon Labs builds the platforms, standards, and tools that underpin genomic discovery at scale.</p>
         <div class="flex gap-3 animate-rise d3"><a href="/projects" class="btn-p">Explore our work</a><a href="/about" class="btn-s">About the lab</a></div>
       </div>
@@ -20,26 +19,6 @@ import BC from "../components/BlogCard.astro";
   </section>
 
   <RF />
-
-  <section class="py-24">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="flex items-end justify-between mb-12">
-        <div><p class="sl">Platforms</p><h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900">Current projects</h2></div>
-        <a href="/projects" class="hidden md:inline-flex items-center gap-1 text-sm text-cobalt-600 hover:text-cobalt-700 font-medium">View all <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-      </div>
-      <PC projects={[{title:"Variant Annotation Infrastructure",description:"A unified platform integrating multi-omics data and evolutionary conservation into a scalable pipeline for variant impact prediction.",tags:["annotation","regulatory genomics","deep learning"],status:"active"},{title:"Global Rare Variant Atlas",description:"An open infrastructure for rare variant burden across 100+ populations with standardized gene-level association resources.",tags:["rare variants","GWAS","population infrastructure"],status:"active"},{title:"Cross-population eQTL Framework",description:"Portable statistical infrastructure for eQTL mapping in diverse populations, designed for cross-study harmonization.",tags:["eQTL","statistical framework","reproducibility"],status:"in-review"}]} />
-    </div>
-  </section>
-
-  <section class="py-20 bg-gray-50 border-y border-gray-100">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        {[{n:"7+",l:"Platforms"},{n:"15+",l:"Open-source Tools"},{n:"5+",l:"Collaborations"},{n:"200K+",l:"Variants Catalogued"}].map((s,i)=>(
-          <div><div class="text-4xl md:text-5xl font-heading font-bold text-cobalt-600 mb-1">{s.n}</div><div class="text-xs uppercase tracking-widest text-gray-400 font-medium">{s.l}</div></div>
-        ))}
-      </div>
-    </div>
-  </section>
 
   <section class="py-24">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">

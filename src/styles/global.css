@@ -121,6 +121,13 @@
     margin-bottom: 1rem;
   }
 
+  .gradient-text {
+    background: linear-gradient(135deg, #4f46e5, #6366f1, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .prose { max-width: none; color: #4b5563; line-height: 1.75; }
   .prose h2 { font-family: "Syne", system-ui, sans-serif; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
   .prose h3 { font-family: "Syne", system-ui, sans-serif; font-size: 1.125rem; margin-top: 2rem; margin-bottom: 0.5rem; color: #1f2937; }
