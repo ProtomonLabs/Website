@@ -86,17 +86,27 @@ public/             — Static assets (logo, favicon, PNGs)
 - `npm run preview` — Preview production build
 - `npm run lint` — ESLint
 
-### Cloudflare Pages Deployment
+### Cloudflare Workers (Builds) Deployment
 
-In **Workers & Pages** → project → **Settings** → **Build configuration**:
+The project is deployed via **Cloudflare Workers Builds** (not Pages). In **Workers & Pages** → project → **Settings** → **Build**:
 
 - **Build command**: `npm run build`
-- **Build output directory**: `dist`
+- **Deploy command**: `npm run deploy` (runs `astro build && wrangler deploy`)
 - **Root directory**: *(leave blank)*
 
-There is **no "Deploy command" field** in Cloudflare Pages — only the two fields above. Source: https://developers.cloudflare.com/pages/configuration/build-configuration/
+Per Cloudflare docs: https://developers.cloudflare.com/workers/framework-guides/web-apps/astro/
 
-The site is fully static (no `@astrojs/cloudflare` adapter, no Pages Functions, no Workers). Cloudflare serves the contents of `dist/` via Git integration once the build succeeds.
+`wrangler.jsonc` configures static assets deployment from `./dist` with no Worker code (no `_worker.js` generated since no Cloudflare adapter is used):
+
+```json
+{
+  "name": "protomon-website",
+  "compatibility_date": "2026-06-30",
+  "assets": { "directory": "./dist" }
+}
+```
+
+`wrangler` is a devDependency — `npx wrangler deploy` uses the version pinned in `package.json`.
 
 ### Design System
 
