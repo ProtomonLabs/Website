@@ -4,6 +4,61 @@
 
 Astro + React + Tailwind CSS static site for a computational genomics research lab.
 
+Repository-specific guidance for AI coding agents.
+
+---
+
+## Core Behavior
+
+- **Think before coding**: State assumptions explicitly. If ambiguous, ask.
+- **Prefer simplest change**: Minimum code needed. No speculative abstractions.
+- **Make surgical edits**: Touch only relevant files. Match existing style.
+- **Work goal-first**: For non-trivial tasks, define a verify-oriented plan.
+
+---
+
+## Autonomy Boundaries
+
+### Safe to do without asking
+
+- Read files and inspect codebase
+- Run lint, tests, builds
+- Edit code directly related to the request
+- Update docs required by code change
+
+### Ask before doing
+
+- Editing CI workflows
+- Creating barrel exports
+
+### Never do
+
+- Modify lockfiles by hand
+
+---
+
+## Protected Files
+
+- `package-lock.json` — only via tooling
+
+---
+
+## Commit Checklist
+
+Before commit, verify:
+
+- [ ] `npm run build` passes
+
+---
+### Content
+
+- Landing page hero: "Infrastructure for the genome"
+- About: Lab bio focused on building genomic infrastructure
+- Projects: Grid of active/completed infrastructure projects
+- Blog: MDX posts (annotation infrastructure, non-coding GWAS infrastructure)
+- Contact: Form + contact info
+
+
 ### Tech Stack
 
 - **Framework**: Astro 5 (static site generation)
@@ -60,10 +115,4 @@ The boxy robot logo (`public/logo.svg`) is a minimal geometric SVG of a tiny rob
 - Stubby arms
 - Two tiny legs
 
-### Content
 
-- Landing page hero: "Infrastructure for the genome"
-- About: Lab bio focused on building genomic infrastructure
-- Projects: Grid of active/completed infrastructure projects
-- Blog: MDX posts (annotation infrastructure, non-coding GWAS infrastructure)
-- Contact: Form + contact info
