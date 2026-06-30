@@ -87,9 +87,9 @@ public/             — Static assets (logo, favicon, PNGs)
 
 ### Design System
 
-- **Fonts**: Syne (headings) + DM Sans (body) — loaded via Google Fonts in `global.css`
+- **Fonts**: Syne (headings) + IBM Plex Sans (body) + IBM Plex Mono (code) — loaded via Google Fonts in `global.css`
 - **Colors**: cobalt (indigo), ocean (blue), ember (warm accent) — see `tailwind.config.mjs`
-- **Components class system**: `.card`, `.tag`, `.btn-primary`, `.btn-secondary`, `.section-label`, `.gradient-text`, `.prose-article`
+- **Components class system**: `.card`, `.tag`, `.btn-primary`, `.btn-secondary`, `.section-label`, `.gradient-text`, `.prose-article`, `.animate-rise`
 - **Backgrounds**: `.bg-grid`, `.bg-dots` utility classes for subtle texture
 
 ### SVG Issue Fix

@@ -122,10 +122,23 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #4f46e5, #6366f1, #818cf8);
+    background: linear-gradient(135deg, #4f46e5, #6366f1, #7c3aed);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .animate-rise {
+    opacity: 0;
+    animation: rise 0.8s ease-out forwards;
+  }
+  .animate-rise.d1 { animation-delay: 0.1s; }
+  .animate-rise.d2 { animation-delay: 0.2s; }
+  .animate-rise.d3 { animation-delay: 0.3s; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .prose { max-width: none; color: #4b5563; line-height: 1.75; }
@@ -145,4 +158,14 @@
   .prose th { background: #f9fafb; color: #374151; padding: 0.5rem 0.75rem; text-align: left; font-weight: 600; font-size: 0.875rem; border: 1px solid #f3f4f6; }
   .prose td { padding: 0.5rem 0.75rem; border: 1px solid #f3f4f6; font-size: 0.875rem; }
   .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+
+  .bg-grid {
+    background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
 }
