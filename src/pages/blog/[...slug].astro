@@ -10,12 +10,12 @@ const {post}=Astro.props; const {Content}=await post.render();
 
   <article class="pt-28 pb-20">
     <div class="max-w-2xl mx-auto px-6 lg:px-8">
-      <a href="/blog" class="inline-flex items-center gap-1 text-sm text-cobalt-600 hover:text-cobalt-800 mb-6"><span>←</span> Back</a>
+      <a href="/blog" class="inline-flex items-center gap-1 text-sm text-cobalt-600 hover:text-cobalt-800 mb-6"><span>←</span> Back to journal</a>
       <div class="flex flex-wrap gap-1.5 mb-4">{post.data.tags.map((t:string)=>(<span class="tag">{t}</span>))}</div>
-      <h1 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900 leading-tight mb-3">{post.data.title}</h1>
-      <div class="flex items-center gap-3 text-sm text-gray-400 mb-8 pb-8 border-b border-gray-100">
+      <h1 class="text-3xl sm:text-4xl font-heading font-bold text-stone-900 leading-tight mb-3">{post.data.title}</h1>
+      <div class="flex items-center gap-3 text-sm text-stone-400 mb-8 pb-8 border-b border-stone-100">
         <time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})}</time>
-        <span class="w-1 h-1 rounded-full bg-gray-200" />
+        <span class="w-1 h-1 rounded-full bg-stone-200" />
         <span>Protomon Labs</span>
       </div>
       <div class="prose"><Content /></div>

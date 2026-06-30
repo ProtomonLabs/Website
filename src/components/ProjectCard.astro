@@ -2,20 +2,20 @@
 export interface P { title: string; description: string; tags: string[]; status: "active"|"completed"|"in-review"; }
 const { projects, maxDisplay } = Astro.props;
 const d = maxDisplay ? projects.slice(0, maxDisplay) : projects;
-const sc: Record<string,string> = { active:"background:#eef2ff;color:#4338ca", completed:"background:#f3f4f6;color:#4b5563", "in-review":"background:#fffbeb;color:#92400e" };
-const sd: Record<string,string> = { active:"background:#4f46e5", completed:"background:#9ca3af", "in-review":"background:#f59e0b" };
+const sc: Record<string,string> = { active:"background:#f5f3ff;color:#6d28d9", completed:"background:#f5f5f4;color:#78716c", "in-review":"background:#fffbeb;color:#92400e" };
+const sd: Record<string,string> = { active:"background:#7c3aed", completed:"background:#a8a29e", "in-review":"background:#f59e0b" };
 const sl: Record<string,string> = { active:"Active", completed:"Completed", "in-review":"In Review" };
 ---
 <div class="grid md:grid-cols-2 gap-5">
   {d.map((p) => (
     <div class="card">
       <div class="flex items-start justify-between gap-3 mb-3">
-        <h3 class="font-heading font-semibold text-gray-900 leading-snug">{p.title}</h3>
-        <span class={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-medium whitespace-nowrap`} style={sc[p.status]}>
+        <h3 class="font-heading font-semibold text-stone-900 leading-snug">{p.title}</h3>
+        <span class={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium whitespace-nowrap`} style={sc[p.status]}>
           <span class="w-1.5 h-1.5 rounded-full" style={sd[p.status]} />{sl[p.status]}
         </span>
       </div>
-      <p class="text-sm text-gray-500 leading-relaxed mb-4">{p.description}</p>
+      <p class="text-sm text-stone-600 leading-relaxed mb-4">{p.description}</p>
       <div class="flex flex-wrap gap-1.5">{p.tags.map((t) => (<span class="tag">{t}</span>))}</div>
     </div>
   ))}

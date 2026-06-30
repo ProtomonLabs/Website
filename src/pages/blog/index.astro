@@ -8,15 +8,15 @@ const s = posts.sort((a,b)=>b.data.pubDate.getTime()-a.data.pubDate.getTime()).m
 ---
 <Base title="Blog"><Fragment slot="header"><Header /></Fragment>
 
-  <section class="pt-28 pb-16 bg-grid" style="background:linear-gradient(135deg,#eef2ff 0%,#ffffff 35%,#faf5ff 100%)">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="max-w-2xl"><p class="sl">Journal</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-gray-900 leading-tight mb-5">The journal</h1><p class="text-lg text-gray-500 max-w-xl">Notes on infrastructure, tooling, and methodology for genomic discovery at scale.</p></div>
+  <section class="relative pt-28 pb-16 overflow-hidden bg-subtle-grid" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 35%,#f5f3ff 100%)">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 relative">
+      <div class="max-w-2xl"><p class="sl">Journal</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-stone-900 leading-tight mb-5">The journal</h1><p class="text-lg text-stone-600 max-w-xl">Notes on infrastructure, tooling, and methodology for genomic discovery at scale.</p></div>
     </div>
   </section>
 
-  <section class="py-16 bg-gray-50 border-y border-gray-100">
+  <section class="py-20 bg-stone-50 border-y border-stone-100">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      {s.length > 0 ? (<div class="grid md:grid-cols-2 gap-5">{s.map((p)=>(<a href={`/blog/${p.slug}`} class="card block group"><div class="flex flex-wrap gap-1.5 mb-3">{p.tags.map((t)=>(<span class="tag">{t}</span>))}</div><h3 class="font-heading font-semibold text-gray-900 mb-2 leading-snug group-hover:text-cobalt-600">{p.title}</h3><p class="text-sm text-gray-500 leading-relaxed mb-4">{p.description}</p><div class="flex items-center justify-between"><span class="text-xs text-gray-400">{p.pubDate.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})}</span><span class="text-xs text-cobalt-600 font-medium">Read</span></div></a>))}</div>) : (<p class="text-center text-gray-400 py-10">No posts yet.</p>)}
+      {s.length > 0 ? (<div class="grid md:grid-cols-2 gap-5">{s.map((p)=>(<a href={`/blog/${p.slug}`} class="card block group"><div class="flex flex-wrap gap-1.5 mb-3">{p.tags.map((t)=>(<span class="tag">{t}</span>))}</div><h3 class="font-heading font-semibold text-stone-900 mb-2 leading-snug group-hover:text-cobalt-600">{p.title}</h3><p class="text-sm text-stone-600 leading-relaxed mb-4">{p.description}</p><div class="flex items-center justify-between"><span class="text-xs text-stone-400">{p.pubDate.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})}</span><span class="text-xs text-cobalt-600 font-medium">Read</span></div></a>))}</div>) : (<p class="text-center text-stone-400 py-10">No posts yet.</p>)}
     </div>
   </section>
 

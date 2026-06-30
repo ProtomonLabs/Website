@@ -7,13 +7,18 @@ import BC from "../components/BlogCard.astro";
 ---
 <Base title="Home"><Fragment slot="header"><Header /></Fragment>
 
-  <section class="min-h-[85vh] flex items-center pt-16 bg-grid" style="background:linear-gradient(135deg,#eef2ff 0%,#ffffff 35%,#faf5ff 100%)">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20 w-full">
-      <div class="max-w-2xl">
-        <p class="sl animate-rise">Genomics Infrastructure Lab</p>
-        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-gray-900 leading-[0.90] mb-6 animate-rise d1"><span class="gradient-text">Infrastructure</span><br/>for the genome</h1>
-        <p class="text-lg text-gray-500 max-w-lg leading-relaxed mb-10 animate-rise d2">Protomon Labs builds the platforms, standards, and tools that underpin genomic discovery at scale.</p>
-        <div class="flex gap-3 animate-rise d3"><a href="/projects" class="btn-p">Explore our work</a><a href="/about" class="btn-s">About the lab</a></div>
+  <section class="relative min-h-[85vh] flex items-center pt-20 overflow-hidden" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 35%,#f5f3ff 100%)">
+    <div class="absolute inset-0 bg-subtle-grid pointer-events-none" />
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20 w-full relative">
+      <div class="max-w-3xl">
+        <p class="sl animate-up">Genomics Infrastructure Lab</p>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-stone-900 leading-[0.88] tracking-tight mb-8 animate-up animate-up-d1">
+          Infrastructure<br />
+          <span class="gradient-text-warm">for the</span><br />
+          genome
+        </h1>
+        <p class="text-lg md:text-xl text-stone-600 max-w-xl leading-relaxed mb-10 animate-up animate-up-d2">Protomon Labs builds the platforms, standards, and tools that underpin genomic discovery at scale.</p>
+        <div class="flex gap-3 animate-up animate-up-d3"><a href="/projects" class="btn-p">Explore our work</a><a href="/about" class="btn-s">About the lab</a></div>
       </div>
     </div>
   </section>
@@ -22,18 +27,18 @@ import BC from "../components/BlogCard.astro";
 
   <section class="py-24">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="max-w-xl mb-12"><p class="sl">Journal</p><h2 class="text-3xl sm:text-4xl font-heading font-bold text-gray-900">Latest writing</h2></div>
+      <div class="max-w-xl mb-12"><p class="sl">Journal</p><h2 class="text-3xl sm:text-4xl font-heading font-bold text-stone-900">Latest writing</h2></div>
       <BC posts={[{title:"Building a Variant Annotation Infrastructure",description:"A practical guide to designing scalable, reproducible variant annotation infrastructure for production-grade genomic analysis.",pubDate:new Date("2026-06-15"),tags:["tutorial","infrastructure","annotation"],slug:"variant-annotation-pipelines"},{title:"Infrastructure Approaches to Non-coding GWAS",description:"How platform thinking is transforming fine-mapping of non-coding GWAS signals through integrated data layers.",pubDate:new Date("2026-06-10"),tags:["GWAS","infrastructure","non-coding"],slug:"non-coding-gwas-loci"}]} />
       <div class="mt-8 text-center"><a href="/blog" class="btn-p">Read the journal</a></div>
     </div>
   </section>
 
-  <section class="py-24 bg-cobalt-600">
+  <section class="py-20 bg-cobalt-600">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
       <div class="max-w-lg mx-auto">
         <h2 class="text-3xl font-heading font-bold text-white mb-4">Building the foundations of genomic discovery</h2>
         <p class="text-cobalt-200 leading-relaxed mb-8">We partner with sequencing centers, biobanks, and tool developers working at genomic scale.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 text-cobalt-700 font-medium rounded-lg transition-all active:scale-[0.97]">Get in touch →</a>
+        <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 text-cobalt-700 font-medium rounded-xl transition-all active:scale-[0.97]">Get in touch →</a>
       </div>
     </div>
   </section>
