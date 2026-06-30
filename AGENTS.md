@@ -87,10 +87,10 @@ public/             — Static assets (logo, favicon, PNGs)
 
 ### Design System
 
-- **Fonts**: Syne (headings) + IBM Plex Sans (body) + IBM Plex Mono (code) — loaded via Google Fonts in `global.css`
-- **Colors**: cobalt (indigo), ocean (blue), ember (warm accent) — see `tailwind.config.mjs`
-- **Components class system**: `.card`, `.tag`, `.btn-primary`, `.btn-secondary`, `.section-label`, `.gradient-text`, `.prose-article`, `.animate-rise`
-- **Backgrounds**: `.bg-grid`, `.bg-dots` utility classes for subtle texture
+- **Fonts**: Syne (headings) + IBM Plex Sans (body) + IBM Plex Mono (code) — loaded via Google Fonts in `global.css` and `<link>` preconnects in `BaseLayout.astro`
+- **Colors**: cobalt palette mapped to purple/violet values (cobalt-600: #6d28d9, cobalt-700: #5b21b6 primary) — see `tailwind.config.mjs`
+- **Components class system**: `.card`, `.tag`, `.btn-p`, `.btn-s`, `.sl` (section label), `.gradient-text`, `.gradient-orb`, `.reveal`, `.divider-gradient`, `.animate-up`, `.prose`
+- **Backgrounds**: `.bg-subtle-grid`, `.bg-grid`, `.bg-dots` utility classes for subtle texture
 
 ### SVG Issue Fix
 

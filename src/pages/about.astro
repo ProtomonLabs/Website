@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 ---
 <Base title="About"><Fragment slot="header"><Header /></Fragment>
 
-  <section class="relative pt-28 pb-16 overflow-hidden bg-subtle-grid" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 35%,#f5f3ff 100%)">
+  <section class="relative pt-28 pb-16 overflow-hidden bg-subtle-grid" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 30%,#ede9fe 100%)">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 relative">
       <div class="max-w-2xl"><p class="sl">About</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-stone-900 leading-tight mb-5">Infrastructure for the genome</h1><p class="text-lg text-stone-600 max-w-xl">Protomon Labs builds the platforms, standards, and tools that make genomic research possible at scale.</p></div>
     </div>
@@ -24,11 +24,11 @@ import Footer from "../components/Footer.astro";
     </div>
   </section>
 
-  <section class="py-20 bg-stone-50 border-y border-stone-100">
+  <section class="py-20 bg-stone-50 border-y border-stone-100 reveal">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="max-w-xl mb-10"><p class="sl">Infrastructure</p><h2 class="text-3xl font-heading font-bold text-stone-900">What we build</h2></div>
       <div class="grid md:grid-cols-2 gap-5">
-        {[{t:"Variant Annotation Platforms",i:["Unified pipelines for WGS and WES","Multi-omics data integration","Cloud-native analysis infrastructure","Real-time variant prioritization","Benchmarking and validation toolchains"]},{t:"Population Genomics Infrastructure",i:["Cross-population frequency databases","Ancestry-aware analysis frameworks","Rare variant burden testing platforms","Demographic inference tooling","Admixture mapping infrastructure"]},{t:"Open Data Resources",i:["Standardized variant catalogues","Reference panels for diverse populations","Annotation knowledge bases","Community benchmarking datasets","Reproducible analysis recipes"]},{t:"Statistical Method Frameworks",i:["Portable eQTL mapping infrastructure","Fine-mapping pipelines for complex traits","PRS evaluation and benchmarking tools","Mendelian randomization frameworks","High-dimensional omics integration"]}].map((a)=>(<div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-3">{a.t}</h3><ul class="space-y-1.5">{a.i.map((i)=>(<li class="flex items-start gap-2 text-sm text-stone-600"><span class="w-1.5 h-1.5 rounded-full bg-cobalt-400 mt-1.5 flex-shrink-0" />{i}</li>))}</ul></div>))}
+        {[{t:"Variant Annotation Platforms",i:["Unified pipelines for WGS and WES","Multi-omics data integration","Cloud-native analysis infrastructure","Real-time variant prioritization","Benchmarking and validation toolchains"]},{t:"Population Genomics Infrastructure",i:["Cross-population frequency databases","Ancestry-aware analysis frameworks","Rare variant burden testing platforms","Demographic inference tooling","Admixture mapping infrastructure"]},{t:"Open Data Resources",i:["Standardized variant catalogues","Reference panels for diverse populations","Annotation knowledge bases","Community benchmarking datasets","Reproducible analysis recipes"]},{t:"Statistical Method Frameworks",i:["Portable eQTL mapping infrastructure","Fine-mapping pipelines for complex traits","PRS evaluation and benchmarking tools","Mendelian randomization frameworks","High-dimensional omics integration"]}].map((a)=>(<div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-3">{a.t}</h3><ul class="space-y-1.5">{a.i.map((i)=>(<li class="flex items-start gap-2 text-sm text-stone-600"><span class="w-1.5 h-1.5 rounded-full bg-cobalt-500 mt-1.5 flex-shrink-0" />{i}</li>))}</ul></div>))}
       </div>
     </div>
   </section>
