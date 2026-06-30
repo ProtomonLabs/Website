@@ -82,8 +82,21 @@ public/             — Static assets (logo, favicon, PNGs)
 ### Key Commands
 
 - `npm run dev` — Start dev server
-- `npm run build` — Build for production
+- `npm run build` — Build for production (11 pages, ~1.4s, outputs to `dist/`)
 - `npm run preview` — Preview production build
+- `npm run lint` — ESLint
+
+### Cloudflare Pages Deployment
+
+In **Workers & Pages** → project → **Settings** → **Build configuration**:
+
+- **Build command**: `npm run build`
+- **Build output directory**: `dist`
+- **Root directory**: *(leave blank)*
+
+There is **no "Deploy command" field** in Cloudflare Pages — only the two fields above. Source: https://developers.cloudflare.com/pages/configuration/build-configuration/
+
+The site is fully static (no `@astrojs/cloudflare` adapter, no Pages Functions, no Workers). Cloudflare serves the contents of `dist/` via Git integration once the build succeeds.
 
 ### Design System
 
