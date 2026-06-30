@@ -1,17 +1,9 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
   "name": "protomon-website",
-  "compatibility_date": "2026-06-30",
-  "observability": {
-    "enabled": true
+  "pages": {
+    "project_name": "protomon-website",
+    "build_output": "dist"
   },
-  "main": "dist/_worker.js/index.js",
-  "compatibility_flags": [
-    "global_fetch_strictly_public",
-    "nodejs_compat"
-  ],
-  "assets": {
-    "binding": "ASSETS",
-    "directory": "dist"
-  }
+  "compatibility_date": "2026-06-30"
 }

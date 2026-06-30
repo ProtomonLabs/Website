@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "npm run build && wrangler dev",
-    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler pages dev dist",
+    "deploy": "wrangler pages deploy dist --project-name=protomon-website",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "cf-typegen": "wrangler types"
