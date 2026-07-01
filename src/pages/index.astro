@@ -8,6 +8,18 @@ import BC from "../components/BlogCard.astro";
 <Base title="Home"><Fragment slot="header"><Header /></Fragment>
   <section class="relative overflow-hidden min-h-screen flex flex-col justify-center pt-20" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 30%,#ede9fe 100%)">
     <div class="absolute inset-0 bg-subtle-grid pointer-events-none hero-grid" />
+    <div class="absolute inset-0 pointer-events-none dot-layer">
+      <div class="dot" style="--x:15%;--y:20%;--d:12s;--del:0s;--s:10px" />
+      <div class="dot" style="--x:70%;--y:35%;--d:14s;--del:2s;--s:8px" />
+      <div class="dot" style="--x:85%;--y:65%;--d:10s;--del:4s;--s:12px" />
+      <div class="dot" style="--x:25%;--y:75%;--d:16s;--del:1s;--s:6px" />
+      <div class="dot" style="--x:50%;--y:15%;--d:13s;--del:3s;--s:9px" />
+      <div class="dot" style="--x:60%;--y:85%;--d:11s;--del:5s;--s:7px" />
+      <div class="dot" style="--x:90%;--y:25%;--d:15s;--del:6s;--s:11px" />
+      <div class="dot" style="--x:10%;--y:55%;--d:18s;--del:7s;--s:8px" />
+      <div class="dot" style="--x:40%;--y:45%;--d:9s;--del:3.5s;--s:5px" />
+      <div class="dot" style="--x:75%;--y:10%;--d:17s;--del:0.5s;--s:10px" />
+    </div>
     <div class="max-w-5xl mx-auto px-6 lg:px-8 py-8 md:py-12 flex-1 flex items-center">
       <div class="text-center max-w-4xl mx-auto w-full">
         <p class="sl justify-center animate-up mb-0">Genomics Infrastructure Lab</p>
@@ -49,5 +61,28 @@ import BC from "../components/BlogCard.astro";
   @keyframes grid-drift {
     from { background-position: 0 0; }
     to { background-position: 48px 48px; }
+  }
+  .dot-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .dot {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--s);
+    height: var(--s);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(109,40,217,0.3) 0%, rgba(109,40,217,0.06) 60%, transparent 100%);
+    animation: dot-drift var(--d) ease-in-out var(--del) infinite alternate;
+  }
+  @keyframes dot-drift {
+    0%   { transform: translate(0, 0) scale(1); opacity: 0.2; }
+    25%  { transform: translate(30px, -20px) scale(1.3); opacity: 0.7; }
+    50%  { transform: translate(-20px, 40px) scale(0.8); opacity: 0.4; }
+    75%  { transform: translate(15px, -35px) scale(1.15); opacity: 0.8; }
+    100% { transform: translate(-25px, 10px) scale(0.9); opacity: 0.3; }
   }
 </style>
