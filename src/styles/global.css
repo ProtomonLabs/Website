@@ -78,11 +78,13 @@
     cursor: pointer;
     font-size: 0.875rem;
     line-height: 1.4;
-    background: #5b21b6;
+    background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 25%, #7c3aed 50%, #8b5cf6 75%, #a855f7 100%);
+    background-size: 400% 400%;
+    animation: gradient-shimmer 15s ease-in-out infinite;
     color: #ffffff;
     box-shadow: 0 1px 3px rgba(91,33,182,0.25);
   }
-  .btn-p:hover { background: #4c1d95; box-shadow: 0 0 24px rgba(91,33,182,0.2); }
+  .btn-p:hover { box-shadow: 0 0 24px rgba(91,33,182,0.3); }
 
   .btn-s {
     display: inline-flex;
@@ -97,12 +99,14 @@
     line-height: 1.4;
     border: 2px solid #e7e5e4;
     color: #44403c;
-    background: transparent;
+    background: linear-gradient(135deg, transparent 0%, transparent 30%, rgba(237,233,254,0.4) 50%, transparent 70%, transparent 100%);
+    background-size: 400% 400%;
+    animation: gradient-shimmer 15s ease-in-out infinite;
+    background-clip: padding-box;
   }
   .btn-s:hover {
     border-color: rgba(91,33,182,0.35);
     color: #5b21b6;
-    background: rgba(245,243,255,0.4);
   }
   .btn-s:active { transform: scale(0.97); }
 
@@ -152,10 +156,19 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #4c1d95, #7c3aed, #a855f7);
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 20%, #7c3aed 40%, #a855f7 60%, #c084fc 80%, #ddd6fe 100%);
+    background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradient-shimmer 15s ease-in-out infinite;
+    filter: drop-shadow(0 0 40px rgba(168,85,247,0.15));
+  }
+
+  @keyframes gradient-shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   .gradient-text-warm {
@@ -163,6 +176,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .logo-gradient {
+    background: linear-gradient(135deg, #4c1d95, #7c3aed, #8b5cf6, #7c3aed, #4c1d95);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shimmer 15s ease-in-out infinite;
   }
 
   .gradient-orb {
