@@ -157,7 +157,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient-shimmer 4s ease infinite;
+    animation: gradient-shimmer 15s ease-in-out infinite;
     filter: drop-shadow(0 0 40px rgba(168,85,247,0.15));
   }
 
