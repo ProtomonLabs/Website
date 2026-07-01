@@ -7,7 +7,7 @@ import BC from "../components/BlogCard.astro";
 ---
 <Base title="Home"><Fragment slot="header"><Header /></Fragment>
   <section class="relative overflow-hidden min-h-screen flex flex-col justify-center pt-20" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 30%,#ede9fe 100%)">
-    <div class="absolute inset-0 bg-subtle-grid pointer-events-none" />
+    <div class="absolute inset-0 bg-subtle-grid pointer-events-none hero-grid" />
     <div class="max-w-5xl mx-auto px-6 lg:px-8 py-8 md:py-12 flex-1 flex items-center">
       <div class="text-center max-w-4xl mx-auto w-full">
         <p class="sl justify-center animate-up mb-0">Genomics Infrastructure Lab</p>
@@ -42,3 +42,12 @@ import BC from "../components/BlogCard.astro";
     </div>
   </section>
 <Fragment slot="footer"><Footer /></Fragment></Base>
+<style>
+  .hero-grid {
+    animation: grid-drift 20s linear infinite;
+  }
+  @keyframes grid-drift {
+    from { background-position: 0 0; }
+    to { background-position: 48px 48px; }
+  }
+</style>
