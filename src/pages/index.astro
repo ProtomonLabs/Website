@@ -8,15 +8,9 @@ import BC from "../components/BlogCard.astro";
 <Base title="Home"><Fragment slot="header"><Header /></Fragment>
   <section class="relative overflow-hidden min-h-screen flex flex-col justify-center pt-20" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 30%,#ede9fe 100%)">
     <div class="absolute inset-0 bg-subtle-grid pointer-events-none hero-grid" />
-    <div class="gradient-orb hero-orb -top-48 -left-48" />
-    <div class="gradient-orb-lg hero-orb hero-orb-2 -bottom-64 -right-48" />
-    <div class="max-w-5xl mx-auto px-6 lg:px-8 py-8 md:py-12 flex-1 flex items-center relative">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8 py-8 md:py-12 flex-1 flex items-center">
       <div class="text-center max-w-4xl mx-auto w-full">
-        <div class="flex items-center justify-center gap-4 mb-4">
-          <span class="hero-accent-line" />
-          <p class="sl justify-center mb-0">Genomics Infrastructure Lab</p>
-          <span class="hero-accent-line" />
-        </div>
+        <p class="sl justify-center animate-up mb-0">Genomics Infrastructure Lab</p>
         <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold leading-[0.85] tracking-tight mb-6 animate-up animate-up-d1 gradient-text">
           Infrastructure<br />
           for the<br />
@@ -55,21 +49,5 @@ import BC from "../components/BlogCard.astro";
   @keyframes grid-drift {
     from { background-position: 0 0; }
     to { background-position: 48px 48px; }
-  }
-  .hero-orb {
-    animation: orb-pulse 8s ease-in-out infinite;
-  }
-  .hero-orb-2 {
-    animation-delay: -4s;
-  }
-  @keyframes orb-pulse {
-    0%, 100% { opacity: 0.6; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.08); }
-  }
-  .hero-accent-line {
-    display: inline-block;
-    width: 2rem;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(91,33,182,0.25), transparent);
   }
 </style>
