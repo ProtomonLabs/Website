@@ -1,4 +1,4 @@
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-stone-200/20 transition-all duration-500">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <a href="/" class="flex items-center gap-3 group">
@@ -29,8 +29,8 @@
   const h = document.getElementById("site-header");
   if (h) {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 60) { h.classList.add("shadow-sm"); }
-      else { h.classList.remove("shadow-sm"); }
+      if (window.scrollY > 60) { h.classList.add("bg-white/80","backdrop-blur-xl","border-b","border-stone-200/20","shadow-sm"); h.classList.remove("bg-transparent"); }
+      else { h.classList.remove("bg-white/80","backdrop-blur-xl","border-b","border-stone-200/20","shadow-sm"); h.classList.add("bg-transparent"); }
     }, { passive: true });
   }
   document.getElementById("mbtn")?.addEventListener("click",()=>document.getElementById("mmenu")?.classList.toggle("hidden"));
