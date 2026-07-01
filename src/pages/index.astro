@@ -6,7 +6,7 @@ import RF from "../components/ResearchFocus.astro";
 import BC from "../components/BlogCard.astro";
 ---
 <Base title="Home"><Fragment slot="header"><Header /></Fragment>
-  <section class="relative overflow-hidden min-h-screen flex flex-col justify-center pt-20" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 30%,#ede9fe 100%)">
+  <section class="relative overflow-hidden min-h-screen flex flex-col justify-center pt-20 hero-bg">
     <div class="absolute inset-0 bg-subtle-grid pointer-events-none hero-grid" />
     <div class="max-w-5xl mx-auto px-6 lg:px-8 py-8 md:py-12 flex-1 flex items-center">
       <div class="text-center max-w-4xl mx-auto w-full">
@@ -43,6 +43,11 @@ import BC from "../components/BlogCard.astro";
   </section>
 <Fragment slot="footer"><Footer /></Fragment></Base>
 <style>
+  .hero-bg {
+    background: linear-gradient(135deg, #fafaf9 0%, #ffffff 25%, #f5f3ff 50%, #ede9fe 75%, #fafaf9 100%);
+    background-size: 400% 400%;
+    animation: gradient-shimmer 15s ease-in-out infinite;
+  }
   .hero-grid {
     animation: grid-drift 20s linear infinite;
   }
