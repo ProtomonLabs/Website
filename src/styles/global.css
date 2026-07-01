@@ -152,12 +152,13 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 25%, #8b5cf6 50%, #a855f7 75%, #c084fc 100%);
-    background-size: 200% 200%;
+    background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 20%, #7c3aed 40%, #a855f7 55%, #d946ef 70%, #f0abfc 100%);
+    background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient-shimmer 6s ease infinite;
+    animation: gradient-shimmer 4s ease infinite;
+    filter: drop-shadow(0 0 40px rgba(168,85,247,0.15));
   }
 
   @keyframes gradient-shimmer {
