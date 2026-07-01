@@ -6,17 +6,17 @@ import RF from "../components/ResearchFocus.astro";
 import BC from "../components/BlogCard.astro";
 ---
 <Base title="Home"><Fragment slot="header"><Header /></Fragment>
-  <section class="relative overflow-hidden pt-16 pb-10" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 30%,#ede9fe 100%)">
+  <section class="relative overflow-hidden min-h-screen flex flex-col justify-center pt-20" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 30%,#ede9fe 100%)">
     <div class="absolute inset-0 bg-subtle-grid pointer-events-none" />
-    <div class="max-w-5xl mx-auto px-6 lg:px-8">
-      <div class="text-center max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8 py-8 md:py-12 flex-1 flex items-center">
+      <div class="text-center max-w-4xl mx-auto w-full">
         <p class="sl justify-center animate-up mb-0">Genomics Infrastructure Lab</p>
-        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold leading-[0.85] tracking-tight mb-4 animate-up animate-up-d1 gradient-text">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold leading-[0.85] tracking-tight mb-6 animate-up animate-up-d1 gradient-text">
           Infrastructure<br />
           for the<br />
           genome
         </h1>
-        <p class="text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed mb-6 animate-up animate-up-d2">Protomon Labs builds the platforms, standards, and tools that underpin genomic discovery at scale.</p>
+        <p class="text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed mb-8 animate-up animate-up-d2">Protomon Labs builds the platforms, standards, and tools that underpin genomic discovery at scale.</p>
         <div class="flex gap-3 justify-center animate-up animate-up-d3"><a href="/projects" class="btn-p">Explore our work</a><a href="/about" class="btn-s">About the lab</a></div>
       </div>
     </div>
