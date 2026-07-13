@@ -1,9 +1,14 @@
 ---
 const areas = [
-  { title: "Beautiful genome browsers", description: "We partner with sequencing centers, biobanks, and tool developers working at genomic scale." },
-  { title: "Standards that ship", description: "Maintained reference implementations, SDKs, and certification infrastructure for GA4GH and community standards — not just spec documents." },
-  { title: "Infrastructure that lasts", description: "Engineer-built, AGPL-licensed, funded by support contracts. Tools that stay maintained after the PhD student graduates.", },
+  { title: "Beautiful genome browsers", description: "We partner with sequencing centers, biobanks, and tool developers working at genomic scale.", icon: "browser" },
+  { title: "Standards in practice", description: "Reference implementations, SDKs, and certification infrastructure for community standards.", icon: "standards" },
+  { title: "Sustainable infrastructure", description: "Engineer-built and maintained through support contracts, providing long-term stability for the tools the community depends on.", icon: "shield" },
 ];
+const icons = {
+  browser: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>',
+  standards: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+};
 ---
 <section class="py-24 bg-stone-50">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
@@ -12,35 +17,13 @@ const areas = [
       <h2 class="text-3xl sm:text-4xl font-heading font-bold text-stone-900">What we build</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-5">
-      <div class="card">
-        <div class="w-10 h-10 rounded-lg bg-cobalt-100 flex items-center justify-center text-cobalt-700 mb-4">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" />
-            <rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" />
-          </svg>
+      {areas.map((a) => (
+        <div class="card">
+          <div class="icon-ring" set:html={icons[a.icon]} />
+          <h3 class="text-lg font-heading font-semibold text-stone-900 mb-2">{a.title}</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">{a.description}</p>
         </div>
-        <h3 class="text-lg font-heading font-semibold text-stone-900 mb-2">{areas[0].title}</h3>
-        <p class="text-sm text-stone-600 leading-relaxed">{areas[0].description}</p>
-      </div>
-      <div class="card">
-        <div class="w-10 h-10 rounded-lg bg-cobalt-100 flex items-center justify-center text-cobalt-700 mb-4">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
-          </svg>
-        </div>
-        <h3 class="text-lg font-heading font-semibold text-stone-900 mb-2">{areas[1].title}</h3>
-        <p class="text-sm text-stone-600 leading-relaxed">{areas[1].description}</p>
-      </div>
-      <div class="card">
-        <div class="w-10 h-10 rounded-lg bg-cobalt-100 flex items-center justify-center text-cobalt-700 mb-4">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
-            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-          </svg>
-        </div>
-        <h3 class="text-lg font-heading font-semibold text-stone-900 mb-2">{areas[2].title}</h3>
-        <p class="text-sm text-stone-600 leading-relaxed">{areas[2].description}</p>
-      </div>
+      ))}
     </div>
   </div>
 </section>
