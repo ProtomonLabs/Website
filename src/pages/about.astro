@@ -16,9 +16,10 @@ import Footer from "../components/Footer.astro";
       <div class="grid md:grid-cols-3 gap-12 items-start">
         <div class="md:col-span-1"><div class="aspect-[3/4] rounded-xl bg-stone-50 flex items-center justify-center border border-stone-100"><img src="/logo.svg" alt="" class="w-28 h-28 opacity-20" /></div></div>
         <div class="md:col-span-2 space-y-5 text-stone-600 leading-relaxed">
-          <p>Genomic research today faces a critical infrastructure gap. Data generation outpaces our capacity to process, standardize, and share it. Variant interpretation requires coordinated pipelines, reference resources, and benchmarking frameworks that don't exist as off-the-shelf solutions. We build them.</p>
-          <p>Protomon Labs develops the computational infrastructure that powers genomic discovery at scale. Our work spans variant annotation platforms, population-scale data resources, statistical method frameworks, and open benchmarking infrastructure — all designed for reproducibility, portability, and community reuse.</p>
-          <p>Everything we build is open source. The foundational layer of genomics should be a shared resource — maintained collaboratively, available freely, and built to last.</p>
+          <p>Academic software for genomics is broken. Competing research groups would rather their tool be the one people use, which kills interoperability. Citations and academic progress drive a proliferation of tools, but not the establishment of standards. These tools are built by PhD students and postdocs, not software developers, so there's no long-term maintenance. Academia doesn't reward ongoing support — actual money and support contracts do. And academia can't employ software developers; they're expensive.</p>
+          <p>GA4GH tries to solve this with standards, but few companies and even fewer academic organisations have the capacity to implement them. The gap between a spec document and a working, maintained reference implementation is enormous — and largely unfunded.</p>
+          <p>Protomon Labs exists to close that gap. We build open-source genomic infrastructure that's maintained, documented, and production-ready. Everything is AGPL-licensed: insurance against large players taking the work, freedom for the community to reuse it, and a dual-license path for organisations that need closed use. Our revenue comes from support contracts, custom development, and deployment assistance — not from gating features behind a paywall.</p>
+          <p>Our founder built and exited a $34M cybersecurity company as cofounder in Australia, holds a PhD from Oxford, and has warm connections into the working groups that need this software. We're based in Cambridge, UK, and we partner with sequencing centers, biobanks, and tool developers working at genomic scale.</p>
         </div>
       </div>
     </div>
@@ -26,18 +27,34 @@ import Footer from "../components/Footer.astro";
 
   <section class="py-20 bg-stone-50 border-y border-stone-100 reveal">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="max-w-xl mb-10"><p class="sl">Infrastructure</p><h2 class="text-3xl font-heading font-bold text-stone-900">What we build</h2></div>
+      <div class="max-w-xl mb-10"><p class="sl">Approach</p><h2 class="text-3xl font-heading font-bold text-stone-900">How we're different</h2></div>
       <div class="grid md:grid-cols-2 gap-5">
-        {[{t:"Variant Annotation Platforms",i:["Unified pipelines for WGS and WES","Multi-omics data integration","Cloud-native analysis infrastructure","Real-time variant prioritization","Benchmarking and validation toolchains"]},{t:"Population Genomics Infrastructure",i:["Cross-population frequency databases","Ancestry-aware analysis frameworks","Rare variant burden testing platforms","Demographic inference tooling","Admixture mapping infrastructure"]},{t:"Open Data Resources",i:["Standardized variant catalogues","Reference panels for diverse populations","Annotation knowledge bases","Community benchmarking datasets","Reproducible analysis recipes"]},{t:"Statistical Method Frameworks",i:["Portable eQTL mapping infrastructure","Fine-mapping pipelines for complex traits","PRS evaluation and benchmarking tools","Mendelian randomization frameworks","High-dimensional omics integration"]}].map((a)=>(<div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-3">{a.t}</h3><ul class="space-y-1.5">{a.i.map((i)=>(<li class="flex items-start gap-2 text-sm text-stone-600"><span class="w-1.5 h-1.5 rounded-full bg-cobalt-500 mt-1.5 flex-shrink-0" />{i}</li>))}</ul></div>))}
+        <div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">Built by engineers, not academics</h3><p class="text-sm text-stone-600 leading-relaxed">We develop software the way it should be built: versioned, tested, documented, and maintained. Not a PhD project that gets abandoned after graduation.</p></div>
+        <div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">Sustainable, not grant-funded</h3><p class="text-sm text-stone-600 leading-relaxed">Support contracts and custom development fund ongoing maintenance. The code is open and free; the value is in having someone accountable for it.</p></div>
+        <div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">AGPL, not MIT</h3><p class="text-sm text-stone-600 leading-relaxed">AGPL protects against big players taking the work closed without contributing back. Dual-licensing available for organisations that need it.</p></div>
+        <div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">Standards that actually ship</h3><p class="text-sm text-stone-600 leading-relaxed">Reference implementations, not spec documents. Certification mechanisms so you know when something is genuinely conformant.</p></div>
       </div>
     </div>
   </section>
 
   <section class="py-20">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="max-w-xl mb-10"><p class="sl">Values</p><h2 class="text-3xl font-heading font-bold text-stone-900">How we build</h2></div>
-      <div class="grid md:grid-cols-4 gap-5">
-        {[{n:"Open by Default",d:"Every platform, pipeline, and standard we develop is released openly."},{n:"Built for Scale",d:"We design for millions of genomes, not thousands."},{n:"Community Standards",d:"We work with consortia to ensure our infrastructure interoperates."},{n:"Reproducible by Design",d:"Containers, versioned workflows, and documentation are built in."}].map((v)=>(<div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">{v.n}</h3><p class="text-sm text-stone-600 leading-relaxed">{v.d}</p></div>))}
+      <div class="max-w-xl mb-10"><p class="sl">Markets</p><h2 class="text-3xl font-heading font-bold text-stone-900">Who we work with</h2></div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">Sequencing centers &amp; biobanks</h3><p class="text-sm text-stone-600 leading-relaxed">Large-scale facilities that need maintained software infrastructure, not one-off pipelines written by a grad student.</p></div>
+        <div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">GA4GH &amp; standards bodies</h3><p class="text-sm text-stone-600 leading-relaxed">Working groups that need reference implementations, SDKs, documentation in multiple languages, and certification infrastructure for real-world conformance.</p></div>
+        <div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">Tool developers</h3><p class="text-sm text-stone-600 leading-relaxed">Small teams building genomic tools who want to focus on their science, not on maintaining infrastructure.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-20 overflow-hidden" style="background:linear-gradient(135deg,#5b21b6,#4c1d95,#3b0764)">
+    <div class="absolute inset-0 bg-subtle-grid opacity-[0.08]" />
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center relative">
+      <div class="max-w-xl mx-auto">
+        <h2 class="text-3xl font-heading font-bold text-white mb-3">Building the foundations of genomic discovery</h2>
+        <p class="text-cobalt-200 leading-relaxed mb-8">We partner with sequencing centers, biobanks, and tool developers working at genomic scale.</p>
+        <a href="/contact" class="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-stone-50 text-cobalt-800 font-medium rounded-xl transition-all active:scale-[0.97]">Get in touch →</a>
       </div>
     </div>
   </section>
