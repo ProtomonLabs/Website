@@ -12,13 +12,8 @@ import Footer from "../components/Footer.astro";
   <section class="py-20 border-t border-stone-100 reveal">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="flex items-center justify-center aspect-[4/3] rounded-xl bg-white border border-stone-200 shadow-sm">
-          <div class="w-32 h-32 rounded-2xl bg-gradient-to-br from-cobalt-50 to-cobalt-100 border border-cobalt-200/50 flex items-center justify-center">
-            <svg class="w-16 h-16 text-cobalt-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="M9 12l2 2 4-4"/>
-            </svg>
-          </div>
+        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-white border border-stone-200 shadow-sm flex items-center justify-center p-6">
+          <img src="/on-laptop.svg" alt="" class="w-full h-full object-contain" />
         </div>
         <div class="space-y-5 text-stone-600 leading-relaxed">
           <h2 class="text-2xl font-heading font-bold text-stone-900">Why AGPL</h2>
