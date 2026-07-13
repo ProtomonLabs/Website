@@ -278,11 +278,4 @@
     background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
     background-size: 24px 24px;
   }
-  .img-rm-bg {
-    position: relative;
-    isolation: isolate;
-  }
-  .img-rm-bg img {
-    mix-blend-mode: multiply;
-  }
 }

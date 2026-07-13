@@ -6,25 +6,21 @@ const principles = [
   {
     title: "Open by default",
     body: "We build in the open because shared infrastructure is stronger. Every tool is publicly available under AGPL. We welcome community contributions because the best ideas can come from anywhere.",
-    image: "/public-domain-vectors-SudDOrtaV9Y-unsplash.svg",
     icon: "open",
   },
   {
     title: "Built to last",
     body: "We apply professional software engineering practices to every tool the community depends on. Versioned, tested, documented, and maintained. Infrastructure that stays reliable beyond any single grant cycle or publication timeline.",
-    image: "/public-domain-vectors-mIffLZAIdjw-unsplash.svg",
     icon: "code",
   },
   {
     title: "Community first",
     body: "We contribute everything back upstream. When organisations build on our infrastructure, their enhancements flow back to the commons. We build with our users, not for them.",
-    image: "/alghozy-eozqULtN00A-unsplash.svg",
     icon: "users",
   },
   {
     title: "Pragmatic progress",
     body: "We balance principles with practice. Open source ideals guide us, but what matters most is shipping infrastructure that works. We focus on outcomes over ideology.",
-    image: "/antar-ray-m7oWgfDnWh0-unsplash.svg",
     icon: "layers",
   },
 ];
@@ -52,8 +48,10 @@ const icons = {
             <h2 class="text-3xl font-heading font-bold text-stone-900 mb-4">{p.title}</h2>
             <p class="text-stone-600 leading-relaxed text-lg">{p.body}</p>
           </div>
-          <div class={`aspect-[4/3] rounded-xl overflow-hidden bg-white border border-stone-100 img-rm-bg ${i % 2 === 0 ? "" : "md:col-start-1 md:row-start-1"}`}>
-            <img src={p.image} alt="" class="w-full h-full object-contain p-4" />
+          <div class={`flex items-center justify-center aspect-[4/3] rounded-xl bg-white border border-stone-100 ${i % 2 === 0 ? "" : "md:col-start-1 md:row-start-1"}`}>
+            <div class="w-28 h-28 rounded-2xl bg-gradient-to-br from-cobalt-50 to-cobalt-100 border border-cobalt-200/50 flex items-center justify-center">
+              <div class="w-14 h-14 text-cobalt-500" set:html={icons[p.icon].replace('width="1.25rem"', 'width="100%"').replace('height="1.25rem"', 'height="100%"').replace('stroke-width="1.5"', 'stroke-width="1.2"')} />
+            </div>
           </div>
         </div>
       </div>
