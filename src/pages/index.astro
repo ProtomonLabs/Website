@@ -3,7 +3,6 @@ import Base from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import RF from "../components/ResearchFocus.astro";
-import BC from "../components/BlogCard.astro";
 ---
 <Base title="Home"><Fragment slot="header"><Header /></Fragment>
   <section class="relative overflow-hidden min-h-screen flex flex-col justify-center pt-20 hero-bg">
@@ -29,7 +28,7 @@ import BC from "../components/BlogCard.astro";
           genome
         </h1>
         <p class="text-base md:text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed mb-8 animate-up animate-up-d2">Protomon Labs builds the platforms, standards, and tools that underpin genomic discovery at scale.</p>
-        <div class="flex gap-3 justify-center animate-up animate-up-d3"><a href="/projects" class="btn-p">Explore our work</a><a href="/about" class="btn-s">About the lab</a></div>
+        <div class="flex gap-3 justify-center animate-up animate-up-d3"><a href="/about" class="btn-p">About the lab</a><a href="/contact" class="btn-s">Get in touch</a></div>
       </div>
     </div>
   </section>
@@ -39,8 +38,8 @@ import BC from "../components/BlogCard.astro";
   <section class="py-20">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
-        <p class="sl mb-4">The infrastructure layer</p>
-        <p class="text-2xl sm:text-3xl font-heading font-semibold text-stone-900 leading-snug">Genomic research runs on infrastructure. We build the platforms, standards, and tools that make it possible — for anyone, at any scale.</p>
+        <p class="sl mb-4">The problem</p>
+        <p class="text-2xl sm:text-3xl font-heading font-semibold text-stone-900 leading-snug">Most genomic software is built by academics, for a paper. It works — until the student graduates. No maintenance. No standards. No one accountable.</p>
       </div>
     </div>
   </section>
@@ -48,20 +47,20 @@ import BC from "../components/BlogCard.astro";
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="max-w-xl mb-12">
         <p class="sl mb-0">Approach</p>
-        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-stone-900">How we build</h2>
+        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-stone-900">How we're different</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-5">
         <div class="card">
-          <h3 class="font-heading font-semibold text-stone-900 mb-2">Open from the start</h3>
-          <p class="text-sm text-stone-600 leading-relaxed">Every platform, pipeline, and standard is publicly released under open-source licences. No black boxes, no vendor lock-in.</p>
+          <h3 class="font-heading font-semibold text-stone-900 mb-2">AGPL, not MIT</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">AGPL protects the commons. Big players can't take our work closed without contributing back. Dual-licensing available for organisations that need it.</p>
         </div>
         <div class="card">
-          <h3 class="font-heading font-semibold text-stone-900 mb-2">Scales to production</h3>
-          <p class="text-sm text-stone-600 leading-relaxed">Designed for millions of genomes, not thousands. Containerized, parallelized, and cloud-native from day one.</p>
+          <h3 class="font-heading font-semibold text-stone-900 mb-2">Built by engineers</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">Versioned, tested, documented, and maintained. Our tools don't get abandoned when someone graduates. Support contracts fund ongoing development.</p>
         </div>
         <div class="card">
-          <h3 class="font-heading font-semibold text-stone-900 mb-2">Reproducible, always</h3>
-          <p class="text-sm text-stone-600 leading-relaxed">Versioned workflows, pinned dependencies, and comprehensive documentation. Every result can be independently verified.</p>
+          <h3 class="font-heading font-semibold text-stone-900 mb-2">Standards that work</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">Reference implementations, not spec documents. Certification tooling so you can verify real-world conformance. We bridge the gap between standards bodies and working code.</p>
         </div>
       </div>
     </div>
@@ -71,17 +70,9 @@ import BC from "../components/BlogCard.astro";
       <div class="max-w-xl mx-auto">
         <p class="sl justify-center mb-0">Open Source</p>
         <h2 class="text-3xl font-heading font-bold text-stone-900 mb-3">Built in the open</h2>
-        <p class="text-stone-600 leading-relaxed mb-6">All our tools are available on GitHub. MIT and GPL licensed. Community contributions welcome.</p>
-        <a href="/open-source" class="btn-p">View repositories →</a>
+        <p class="text-stone-600 leading-relaxed mb-6">All our tools are available on GitHub. AGPL licensed. Community contributions and dual-licensing enquiries welcome.</p>
+        <a href="/open-source" class="btn-p">Licensing &amp; repos →</a>
       </div>
-    </div>
-  </section>
-  <div class="divider-gradient max-w-3xl mx-auto" />
-  <section class="py-20">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="max-w-2xl mx-auto text-center mb-12"><p class="sl justify-center mb-0">Journal</p><h2 class="text-3xl sm:text-4xl font-heading font-bold text-stone-900">Latest writing</h2></div>
-      <BC posts={[{title:"Building a Variant Annotation Infrastructure",description:"A practical guide to designing scalable, reproducible variant annotation infrastructure for production-grade genomic analysis.",pubDate:new Date("2026-06-15"),tags:["tutorial","infrastructure","annotation"],slug:"variant-annotation-pipelines"},{title:"Infrastructure Approaches to Non-coding GWAS",description:"How platform thinking is transforming fine-mapping of non-coding GWAS signals through integrated data layers.",pubDate:new Date("2026-06-10"),tags:["GWAS","infrastructure","non-coding"],slug:"non-coding-gwas-loci"}]} />
-      <div class="mt-8 text-center"><a href="/blog" class="btn-p">Read the journal →</a></div>
     </div>
   </section>
   <section class="relative py-20 overflow-hidden" style="background:linear-gradient(135deg,#5b21b6,#4c1d95,#3b0764)">
