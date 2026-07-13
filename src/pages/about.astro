@@ -7,36 +7,56 @@ import Footer from "../components/Footer.astro";
 
   <section class="relative pt-28 pb-16 overflow-hidden bg-subtle-grid" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 30%,#ede9fe 100%)">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 relative">
-      <div class="max-w-2xl"><p class="sl">About</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-stone-900 leading-tight mb-5">Infrastructure for the genome</h1><p class="text-lg text-stone-600 max-w-xl">Open-source infrastructure, maintained for the long term. Based in Oxford, UK.</p></div>
+      <div class="max-w-2xl"><p class="sl">About</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-stone-900 leading-tight mb-5">Infrastructure for the genome</h1><p class="text-lg text-stone-600 max-w-xl">Open-source infrastructure, maintained for the long term.</p></div>
     </div>
   </section>
 
   <section class="py-20">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-stone-600 leading-relaxed space-y-5">
-        <p>Protomon Labs builds open-source infrastructure for genomic research: genome browsers, standards implementations, and certification tooling, all maintained and production-ready. Everything is AGPL-licensed, with a dual-license path for commercial use. Revenue comes from support contracts and custom development, which means the code stays open and organisations that depend on it have a team accountable for keeping it current. Based in Oxford, UK.</p>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-5 text-stone-600 leading-relaxed">
+          <p>Protomon builds open-source infrastructure that makes genomic discovery possible at scale. Genome browsers, standards implementations, and certification tooling, all maintained and production-ready. We believe the foundational layer of genomics should be a shared resource: open by default, built to last, and available to everyone.</p>
+          <p>Everything is AGPL-licensed, keeping the work in the commons, with a dual-license path for organisations that need commercial use.</p>
+        </div>
+        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-stone-50 border border-stone-100">
+          <img src="/alghozy-0ZyP2WUVT-o-unsplash.png" alt="" class="w-full h-full object-cover" />
+        </div>
       </div>
     </div>
   </section>
 
   <section class="py-20 bg-stone-50 border-y border-stone-100 reveal">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="max-w-xl mb-10"><p class="sl">Approach</p><h2 class="text-3xl font-heading font-bold text-stone-900">What we do</h2></div>
+      <div class="max-w-xl mb-10"><p class="sl">Values</p><h2 class="text-3xl font-heading font-bold text-stone-900">Our principles</h2></div>
       <div class="grid md:grid-cols-3 gap-5">
         <div class="card">
-          <div class="icon-ring"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <h3 class="font-heading font-semibold text-stone-900 mb-2">Engineering-first</h3>
-          <p class="text-sm text-stone-600 leading-relaxed">Professional software engineering practices applied to genomic infrastructure: versioning, testing, documentation, and ongoing maintenance.</p>
-        </div>
-        <div class="card">
-          <div class="icon-ring"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3 class="font-heading font-semibold text-stone-900 mb-2">Sustainable funding</h3>
-          <p class="text-sm text-stone-600 leading-relaxed">Support contracts fund ongoing maintenance while the code stays open. Accountability and reliability without gating features behind a paywall.</p>
-        </div>
-        <div class="card">
           <div class="icon-ring"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
-          <h3 class="font-heading font-semibold text-stone-900 mb-2">Open with protection</h3>
-          <p class="text-sm text-stone-600 leading-relaxed">AGPL keeps community contributions in the commons. Dual-licensing available for organisations that need a commercial path.</p>
+          <h3 class="font-heading font-semibold text-stone-900 mb-2">Open by default</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">We build in the open because shared infrastructure is stronger. Every tool is publicly available and community contributions are welcome.</p>
+        </div>
+        <div class="card">
+          <div class="icon-ring"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <h3 class="font-heading font-semibold text-stone-900 mb-2">Built to last</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">Professional engineering practices applied to tools the community depends on. Versioned, tested, documented, and maintained.</p>
+        </div>
+        <div class="card">
+          <div class="icon-ring"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3 class="font-heading font-semibold text-stone-900 mb-2">Community first</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">Good ideas come from anywhere. We contribute everything back upstream and build with, not for, our users.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 reveal">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="bg-stone-50 border border-stone-100 rounded-xl p-8 flex items-center gap-6">
+        <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+          <img src="/robertus-bellarmino-sindhu-noto-J6GyPqUxI7k-unsplash.svg" alt="" class="w-full h-full object-cover" />
+        </div>
+        <div>
+          <h3 class="font-heading font-semibold text-stone-900 mb-1">Based in Oxford, UK</h3>
+          <p class="text-sm text-stone-600">We work with sequencing centers, biobanks, and tool developers around the world.</p>
         </div>
       </div>
     </div>

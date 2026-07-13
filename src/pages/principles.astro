@@ -1,0 +1,74 @@
+---
+import Base from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const principles = [
+  {
+    title: "Open by default",
+    body: "We build in the open because shared infrastructure is stronger. Every tool is publicly available under AGPL. We welcome community contributions because the best ideas can come from anywhere.",
+    image: "/public-domain-vectors-SudDOrtaV9Y-unsplash.svg",
+    icon: "open",
+  },
+  {
+    title: "Built to last",
+    body: "We apply professional software engineering practices to every tool the community depends on. Versioned, tested, documented, and maintained. Infrastructure that stays reliable beyond any single grant cycle or publication timeline.",
+    image: "/public-domain-vectors-mIffLZAIdjw-unsplash.svg",
+    icon: "code",
+  },
+  {
+    title: "Community first",
+    body: "We contribute everything back upstream. When organisations build on our infrastructure, their enhancements flow back to the commons. We build with our users, not for them.",
+    image: "/alghozy-eozqULtN00A-unsplash.svg",
+    icon: "users",
+  },
+  {
+    title: "Pragmatic progress",
+    body: "We balance principles with practice. Open source ideals guide us, but what matters most is shipping infrastructure that works. We focus on outcomes over ideology.",
+    image: "/antar-ray-m7oWgfDnWh0-unsplash.svg",
+    icon: "layers",
+  },
+];
+const icons = {
+  open: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg>',
+  code: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+  users: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+  layers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
+};
+---
+<Base title="Principles"><Fragment slot="header"><Header /></Fragment>
+
+  <section class="relative pt-28 pb-16 overflow-hidden bg-subtle-grid" style="background:linear-gradient(135deg,#fafaf9 0%,#ffffff 30%,#ede9fe 100%)">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 relative">
+      <div class="max-w-2xl"><p class="sl">Values</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-stone-900 leading-tight mb-5">Our principles</h1><p class="text-lg text-stone-600 max-w-xl">The foundational beliefs that guide how we build, share, and collaborate.</p></div>
+    </div>
+  </section>
+
+  {principles.map((p, i) => (
+    <section class={`py-20 ${i % 2 === 0 ? "bg-stone-50 border-y border-stone-100" : ""} reveal`}>
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 0 ? "" : "md:grid-flow-dense"}`}>
+          <div class={i % 2 === 0 ? "" : "md:col-start-2"}>
+            <div class="icon-ring mb-4" set:html={icons[p.icon]} />
+            <h2 class="text-3xl font-heading font-bold text-stone-900 mb-4">{p.title}</h2>
+            <p class="text-stone-600 leading-relaxed text-lg">{p.body}</p>
+          </div>
+          <div class={`aspect-[4/3] rounded-xl overflow-hidden bg-white border border-stone-100 ${i % 2 === 0 ? "" : "md:col-start-1 md:row-start-1"}`}>
+            <img src={p.image} alt="" class="w-full h-full object-contain p-4" />
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="relative py-20 overflow-hidden" style="background:linear-gradient(135deg,#5b21b6,#4c1d95,#3b0764)">
+    <div class="absolute inset-0 bg-subtle-grid opacity-[0.08]" />
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center relative">
+      <div class="max-w-xl mx-auto">
+        <h2 class="text-3xl font-heading font-bold text-white mb-3">Principles in practice</h2>
+        <p class="text-cobalt-200 leading-relaxed mb-8">Every tool we build is shaped by these principles. See them in action across our repositories.</p>
+        <a href="/open-source" class="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-stone-50 text-stone-800 font-medium rounded-xl transition-all active:scale-[0.97]">Explore open source →</a>
+      </div>
+    </div>
+  </section>
+
+<Fragment slot="footer"><Footer /></Fragment></Base>
