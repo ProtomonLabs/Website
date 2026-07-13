@@ -52,7 +52,7 @@ const icons = {
             <h2 class="text-3xl font-heading font-bold text-stone-900 mb-4">{p.title}</h2>
             <p class="text-stone-600 leading-relaxed text-lg">{p.body}</p>
           </div>
-          <div class={`aspect-[4/3] rounded-xl overflow-hidden bg-white border border-stone-100 ${i % 2 === 0 ? "" : "md:col-start-1 md:row-start-1"}`}>
+          <div class={`aspect-[4/3] rounded-xl overflow-hidden bg-white border border-stone-100 img-rm-bg ${i % 2 === 0 ? "" : "md:col-start-1 md:row-start-1"}`}>
             <img src={p.image} alt="" class="w-full h-full object-contain p-4" />
           </div>
         </div>
