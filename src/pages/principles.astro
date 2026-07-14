@@ -46,13 +46,13 @@ const icons = {
   {principles.map((p, i) => (
     <section class="py-20 bg-stone-50 border-y border-stone-100 reveal">
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div class={i % 2 === 0 ? "" : "md:order-2"}>
+        <div class={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 0 ? "" : "md:grid-flow-dense"}`}>
+          <div class={i % 2 === 0 ? "" : "md:col-start-2"}>
             <div class="icon-ring mb-4" set:html={icons[p.icon]} />
             <h2 class="text-3xl font-heading font-bold text-stone-900 mb-4">{p.title}</h2>
             <p class="text-stone-600 leading-relaxed text-base">{p.body}</p>
           </div>
-          <div class={`flex items-center justify-center aspect-[4/3] rounded-xl bg-white p-6 ${i % 2 === 0 ? "" : "md:order-1"}`}>
+          <div class={`flex items-center justify-center aspect-[4/3] rounded-xl bg-white p-6 ${i % 2 === 0 ? "" : "md:col-start-1 md:row-start-1"}`}>
             <img src={p.image} alt="" class="w-full h-full object-contain img-rm-white" />
           </div>
         </div>
@@ -66,7 +66,7 @@ const icons = {
       <div class="max-w-xl mx-auto">
         <h2 class="text-3xl font-heading font-bold text-white mb-3">Principles in practice</h2>
         <p class="text-cobalt-200 leading-relaxed mb-8">Every tool we build is shaped by these principles. See them in action across our repositories.</p>
-        <a href="/open-source" class="btn-s">Explore open source →</a>
+        <a href="/open-source" class="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-stone-50 text-stone-800 font-medium rounded-xl transition-all active:scale-[0.97]">Explore open source →</a>
       </div>
     </div>
   </section>
