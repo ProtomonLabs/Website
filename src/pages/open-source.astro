@@ -2,6 +2,7 @@
 import Base from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { icons } from "../data/icons";
 ---
 <Base title="Open Source"><Fragment slot="header"><Header /></Fragment>
 
@@ -9,7 +10,7 @@ import Footer from "../components/Footer.astro";
     <div class="max-w-6xl mx-auto px-6 lg:px-8 relative"><div class="max-w-2xl"><p class="sl">Licensing</p><h1 class="text-4xl sm:text-5xl font-heading font-bold text-stone-900 leading-tight mb-4">Open source</h1><p class="text-lg md:text-xl text-stone-600 max-w-xl">Open source is at the core of who we are. Every tool we build is publicly available because we believe shared progress creates better outcomes.</p></div></div>
   </section>
 
-  <section class="py-20 border-t border-stone-100 reveal">
+  <section class="py-16 border-t border-stone-100 reveal">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="aspect-[4/3] flex items-center justify-center p-6">
@@ -19,27 +20,44 @@ import Footer from "../components/Footer.astro";
           <h2 class="text-2xl font-heading font-bold text-stone-900">Why AGPL</h2>
           <p>We license our work under the AGPL because it ensures improvements flow back to the community. When organisations build on our infrastructure, their enhancements stay in the commons. Everyone benefits from shared progress.</p>
           <p>We also offer commercial licences for organisations that need to integrate our software into closed products or proprietary platforms. This path helps fund ongoing maintenance while keeping the core work open for everyone.</p>
-          <p>Contact hello@protomonlabs.org for licensing enquiries.</p>
+          <p>Contact <a href="mailto:contact@protomon.com" class="text-cobalt-700 hover:text-cobalt-600 underline underline-offset-4 decoration-cobalt-200">contact@protomon.com</a> for licensing enquiries.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-stone-50 border-y border-stone-100 reveal">
+  <section class="py-16 bg-stone-50 border-y border-stone-100 reveal">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="max-w-xl mb-10"><p class="sl">Repositories</p><h2 class="text-3xl font-heading font-bold text-stone-900">What we build</h2></div>
+      <div class="max-w-xl mb-8"><p class="sl">Repositories</p><h2 class="text-3xl font-heading font-bold text-stone-900">What we build</h2></div>
       <div class="grid md:grid-cols-4 gap-5">
-        <div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">SV Browser</h3><p class="text-base text-stone-600">Open-source structural variant genome browser. AGPL. Paid support and custom deployment available.</p></div>
-        <div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">Standards SDKs</h3><p class="text-base text-stone-600">Maintained reference implementations for community standards.</p></div>
-        <div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">Certification Infrastructure</h3><p class="text-base text-stone-600">Conformance verification tooling and badge system for standards adoption.</p></div>
-        <div class="card"><h3 class="font-heading font-semibold text-stone-900 mb-2">Federated Browser</h3><p class="text-base text-stone-600">Distributed genome browser architecture for cross-institutional data sharing.</p></div>
+        <div class="card">
+          <div class="icon-ring" set:html={icons.dna} />
+          <h3 class="font-heading font-semibold text-stone-900 mb-2">SV Browser</h3>
+          <p class="text-base text-stone-600">Open-source structural variant genome browser. AGPL. Paid support and custom deployment available.</p>
+        </div>
+        <div class="card">
+          <div class="icon-ring" set:html={icons.code} />
+          <h3 class="font-heading font-semibold text-stone-900 mb-2">Standards SDKs</h3>
+          <p class="text-base text-stone-600">Maintained reference implementations for community standards.</p>
+        </div>
+        <div class="card">
+          <div class="icon-ring" set:html={icons.badgeCheck} />
+          <h3 class="font-heading font-semibold text-stone-900 mb-2">Certification Infrastructure</h3>
+          <p class="text-base text-stone-600">Conformance verification tooling and badge system for standards adoption.</p>
+        </div>
+        <div class="card">
+          <div class="icon-ring" set:html={icons.share2} />
+          <h3 class="font-heading font-semibold text-stone-900 mb-2">Federated Browser</h3>
+          <p class="text-base text-stone-600">Distributed genome browser architecture for cross-institutional data sharing.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="py-20 reveal">
+  <section class="py-16 reveal">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="max-w-2xl mx-auto text-center">
+        <div class="icon-ring mx-auto mb-4" set:html={icons.folderGit} />
         <h2 class="text-2xl font-heading font-bold text-stone-900 mb-4">Contributing</h2>
         <p class="text-stone-600 leading-relaxed mb-4">We welcome contributions. All repositories require a Contributor Licence Agreement (CLA) to protect the project's licensing model. See CONTRIBUTING.md in each repository for details.</p>
         <a href="https://github.com/protomonlabs" target="_blank" rel="noopener noreferrer" class="btn-p">View on GitHub →</a>

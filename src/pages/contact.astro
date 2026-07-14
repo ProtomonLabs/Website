@@ -2,7 +2,7 @@
 import Base from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Form from "../components/ContactForm.tsx";
+import { icons } from "../data/icons";
 ---
 <Base title="Contact"><Fragment slot="header"><Header /></Fragment>
 
@@ -12,15 +12,29 @@ import Form from "../components/ContactForm.tsx";
     </div>
   </section>
 
-  <section class="py-20 bg-stone-50 border-y border-stone-100 reveal">
+  <section class="py-16 bg-stone-50 border-y border-stone-100 reveal">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
         <div class="space-y-4">
-          <div class="card"><h3 class="font-semibold text-stone-900 text-sm mb-1">Email</h3><p class="text-base text-stone-600">hello@protomonlabs.org</p></div>
-          <div class="card"><h3 class="font-semibold text-stone-900 text-sm mb-1">Location</h3><p class="text-base text-stone-600">Computational Genomics Lab<br />Oxford, UK</p></div>
-          <div class="card"><h3 class="font-semibold text-stone-900 text-sm mb-1">Availability</h3><p class="text-base text-stone-600">We aim to respond within 2-3 business days.</p></div>
+          <div class="card">
+            <div class="icon-ring" set:html={icons.mail} />
+            <h3 class="font-semibold text-stone-900 text-sm mb-1">Email</h3>
+            <a href="mailto:contact@protomon.com" class="text-base text-cobalt-700 hover:text-cobalt-600 transition-colors">contact@protomon.com</a>
+          </div>
+          <div class="card">
+            <div class="icon-ring" set:html={icons.mapPin} />
+            <h3 class="font-semibold text-stone-900 text-sm mb-1">Location</h3>
+            <p class="text-base text-stone-600">Protomon Labs<br />Oxford, UK</p>
+          </div>
         </div>
-        <div class="md:col-span-2"><div class="card"><h2 class="text-lg font-heading font-semibold text-stone-900 mb-5">Send a message</h2><Form client:load /></div></div>
+        <div class="md:col-span-2">
+          <div class="card text-center py-10">
+            <div class="icon-ring mx-auto" set:html={icons.send} />
+            <h2 class="text-lg font-heading font-semibold text-stone-900 mb-2">Send us an email</h2>
+            <p class="text-base text-stone-600 mb-4">Reach out directly — we read every message.</p>
+            <a href="mailto:contact@protomon.com" class="btn-p inline-flex">contact@protomon.com</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
