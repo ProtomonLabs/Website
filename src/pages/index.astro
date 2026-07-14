@@ -3,6 +3,7 @@ import Base from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import RF from "../components/ResearchFocus.astro";
+import { icons } from "../data/icons";
 ---
 <Base title="Home"><Fragment slot="header"><Header /></Fragment>
   <section class="relative overflow-hidden min-h-screen flex flex-col justify-center pt-20 hero-bg">
@@ -35,7 +36,7 @@ import RF from "../components/ResearchFocus.astro";
   <div class="divider-gradient max-w-3xl mx-auto" />
   <RF />
   <div class="divider-gradient max-w-3xl mx-auto" />
-  <section class="py-20">
+  <section class="py-16">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
         <p class="sl-center mb-4">The opportunity</p>
@@ -43,47 +44,49 @@ import RF from "../components/ResearchFocus.astro";
       </div>
     </div>
   </section>
-  <section class="py-20 bg-stone-50 border-y border-stone-100">
+  <section class="py-16 bg-stone-50 border-y border-stone-100">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="max-w-xl mb-10">
+      <div class="max-w-xl mb-8">
         <p class="sl mb-0">Approach</p>
         <h2 class="text-3xl sm:text-4xl font-heading font-bold text-stone-900">What we do</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-5">
         <div class="card">
-          <div class="icon-ring"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/></svg></div>
+          <div class="icon-ring" set:html={icons.beaker} />
           <h3 class="font-heading font-semibold text-stone-900 mb-2">Open by default</h3>
-          <p class="text-base text-stone-600 leading-relaxed">AGPL licensing keeps our work in the commons. We also provide dual-licensing for organisations that need a commercial path.</p>
+          <p class="text-[17px] text-stone-600 leading-relaxed">AGPL licensing keeps our work in the commons. We also provide dual-licensing for organisations that need a commercial path.</p>
         </div>
         <div class="card">
-          <div class="icon-ring"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="icon-ring" set:html={icons.code} />
           <h3 class="font-heading font-semibold text-stone-900 mb-2">Built for production</h3>
-          <p class="text-base text-stone-600 leading-relaxed">Versioned, tested, documented, and maintained. Software you can deploy with confidence.</p>
+          <p class="text-[17px] text-stone-600 leading-relaxed">Versioned, tested, documented, and maintained. Software you can deploy with confidence.</p>
         </div>
         <div class="card">
-          <div class="icon-ring"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="icon-ring" set:html={icons.layers} />
           <h3 class="font-heading font-semibold text-stone-900 mb-2">Standards in practice</h3>
-          <p class="text-base text-stone-600 leading-relaxed">We turn specification documents into tested, deployable reference implementations for community standards.</p>
+          <p class="text-[17px] text-stone-600 leading-relaxed">We turn specification documents into tested, deployable reference implementations for community standards.</p>
         </div>
       </div>
     </div>
   </section>
-  <section class="py-20">
+  <section class="py-16">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
       <div class="max-w-xl mx-auto">
         <p class="sl-center mb-0">Open Source</p>
+        <div class="icon-ring mx-auto mb-4" set:html={icons.folderGit} />
         <h2 class="text-3xl font-heading font-bold text-stone-900 mb-3">Built in the open</h2>
         <p class="text-stone-600 leading-relaxed mb-6">All our tools are available on GitHub under AGPL. Community contributions and dual-licensing enquiries welcome.</p>
         <a href="/open-source" class="btn-p">Licensing &amp; repos →</a>
       </div>
     </div>
   </section>
-  <section class="relative py-20 overflow-hidden" style="background:linear-gradient(135deg,#5b21b6,#4c1d95,#3b0764)">
+  <section class="relative py-16 overflow-hidden" style="background:linear-gradient(135deg,#5b21b6,#4c1d95,#3b0764)">
     <div class="absolute inset-0 bg-subtle-grid opacity-[0.08]" />
     <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center relative">
       <div class="max-w-xl mx-auto">
+        <div class="icon-ring mx-auto mb-4" style="border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.08)" set:html={icons.sparkles} />
         <h2 class="text-3xl font-heading font-bold text-white mb-3">Building the foundations of genomic discovery</h2>
-        <p class="text-cobalt-200 leading-relaxed mb-8">We partner with sequencing centers, biobanks, and tool developers working at genomic scale.</p>
+        <p class="text-cobalt-200 leading-relaxed mb-8">Are you an academic lab, clinical group, or bioinformatic tool user working at the genomic scale? Get in touch with us.</p>
         <a href="/contact" class="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-stone-50 text-stone-800 font-medium rounded-xl transition-all active:scale-[0.97]">Get in touch →</a>
       </div>
     </div>
